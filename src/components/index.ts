@@ -4,6 +4,7 @@ export { default as Card } from "./ui/Card";
 export { default as Heading } from "./ui/Heading";
 export { default as BookCallButton } from "./ui/BookCallButton";
 export { default as VideoCard } from "./ui/VideoCard";
+export { default as Loader } from "./ui/Loader";
 
 // Layout Components
 export { default as Navbar } from "./layout/Navbar";
