@@ -13,3 +13,7 @@ export { default as Navbar } from "./layout/Navbar";
 export { default as HeroSection } from "./sections/HeroSection";
 export { default as StatsSection } from "./sections/StatsSection";
 export { default as ServicesSection } from "./sections/ServicesSection";
+export { default as ProjectsSection } from "./sections/ProjectsSection";
+export { default as TeamsSection } from "./sections/TeamsSection";
+export { default as TestimonialsSection } from "./sections/TestimonialsSection";
+export { default as ContactSection } from "./sections/ContactSection";

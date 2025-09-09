@@ -19,6 +19,7 @@ export default function VideoCard({
   const [showPlaceholder, setShowPlaceholder] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [videoError, setVideoError] = useState(false);
+  const [thumbnailError, setThumbnailError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handlePlay = async () => {
@@ -55,18 +56,48 @@ export default function VideoCard({
   };
 
   return (
-    <div className={`group cursor-pointer tv-card ${className}`}>
+    <div 
+      className={`group cursor-pointer tv-card ${className}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       {/* TV Frame */}
       <div className="relative bg-slate-800 rounded-xl p-3 tv-glow">
         {/* TV Screen Bezel */}
         <div className="bg-slate-900 rounded-lg p-1.5 shadow-inner">
           {/* TV Screen */}
           <div className="relative aspect-video bg-black rounded-md overflow-hidden tv-screen-glow">
-            {/* Video Element */}
+            {/* Thumbnail Image - Shows when video is not playing */}
+            {!isPlaying && !isLoading && !showPlaceholder && !thumbnailError && (
+              <img
+                src={thumbnail}
+                alt={title}
+                className="w-full h-full object-cover"
+                onError={() => {
+                  console.warn(`Thumbnail ${thumbnail} failed to load`);
+                  setThumbnailError(true);
+                }}
+              />
+            )}
+
+            {/* Fallback background when thumbnail fails to load */}
+            {!isPlaying && !isLoading && !showPlaceholder && thumbnailError && (
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center">
+                <div className="text-center text-white/60">
+                  <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3 border border-white/20">
+                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                  <p className="text-sm font-medium">{title}</p>
+                </div>
+              </div>
+            )}
+
+            {/* Video Element - Only visible when playing */}
             <video
               ref={videoRef}
-              className="w-full h-full object-cover"
-              poster={thumbnail}
+              className={`w-full h-full object-cover ${isPlaying ? 'block' : 'hidden'}`}
               muted
               loop
               onPlay={() => {
@@ -82,7 +113,7 @@ export default function VideoCard({
                 setVideoError(true);
                 setIsLoading(false);
                 // Only show placeholder if we actually tried to play a video
-                if (isLoading || isPlaying) {
+                if (isPlaying) {
                   setShowPlaceholder(true);
                 }
               }}
