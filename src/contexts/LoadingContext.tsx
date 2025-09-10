@@ -12,10 +12,10 @@ export function LoadingProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Minimal loading time for smooth UX
+    // Optimal loading time for resource loading and smooth UX
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 300); // 300ms for smooth transition
+    }, 1500); // 1.5s - gives Vercel time to load resources while maintaining good UX
 
     return () => clearTimeout(timer);
   }, []);

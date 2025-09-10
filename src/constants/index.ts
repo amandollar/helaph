@@ -72,7 +72,7 @@ export const MAIN_SERVICES = [
     id: "full-stack-apps",
     title: "Full-Stack Applications",
     description: "Complete web applications with frontend, backend, and database",
-    videoUrl: "/videos/FullStack.mp4", 
+    videoUrl: "/videos/Full-stack.mp4", 
     thumbnail: "/images/FullStack.png",
     features: ["Modern Tech Stack", "Scalable Architecture", "API Integration", "Cloud Deployment"]
   },
