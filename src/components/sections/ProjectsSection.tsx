@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
+import Image from "next/image";
 import { Sparkles, Clock, CheckCircle } from "lucide-react";
 import Heading from "../ui/Heading";
 import { PROJECTS } from "../../constants";
@@ -54,11 +55,11 @@ export default function ProjectsSection() {
           {/* Stats Row */}
           <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto mb-8 md:mb-12">
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-1 sm:mb-2">50+</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-1 sm:mb-2">7</div>
               <div className="text-xs sm:text-sm text-slate-600">Projects</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-1 sm:mb-2">98%</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-1 sm:mb-2">100%</div>
               <div className="text-xs sm:text-sm text-slate-600">Satisfaction</div>
             </div>
             <div className="text-center">
@@ -107,7 +108,7 @@ export default function ProjectsSection() {
 }
 
 interface ProjectCardProps {
-  project: (typeof PROJECTS)[number];
+  project: (typeof PROJECTS)[number] & { videoUrl?: string };
   index: number;
   isHovered: boolean;
   onHover: () => void;
@@ -116,6 +117,23 @@ interface ProjectCardProps {
 
 function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCardProps) {
   const [imageError, setImageError] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+  
+  // Handle video play/pause on hover
+  React.useEffect(() => {
+    if (videoRef.current && project.videoUrl) {
+      if (isHovered) {
+        videoRef.current.play().catch((error) => {
+          console.error('Video play failed:', error);
+          setVideoError(true);
+        });
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isHovered, project.videoUrl]);
+
   
   return (
     <div 
@@ -128,24 +146,51 @@ function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCar
     >
       {/* Main Card */}
       <div className="relative bg-white rounded-xl sm:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:scale-105 sm:hover:-rotate-1">
-        {/* Project Image */}
+        {/* Project Media (Video or Image) */}
         <div className="relative aspect-[16/10] overflow-hidden">
-          {!imageError ? (
-            <img
+          {project.videoUrl && !videoError ? (
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              poster={project.image}
+              preload="metadata"
+              muted
+              loop
+              playsInline
+              onError={() => setVideoError(true)}
+              onLoadStart={() => process.env.NODE_ENV === 'development' && console.log('Video loading started')}
+              onCanPlay={() => process.env.NODE_ENV === 'development' && console.log('Video can play')}
+            >
+              <source src={project.videoUrl} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          ) : !imageError ? (
+            <Image
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              fill
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
               onError={() => setImageError(true)}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={index < 3}
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-slate-200 via-slate-300 to-slate-400 flex items-center justify-center">
               <div className="text-center text-slate-500">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/50 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
+                  {videoError ? (
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  ) : (
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                  )}
                 </div>
-                <p className="text-xs sm:text-sm font-medium">Project Preview</p>
+                <p className="text-xs sm:text-sm font-medium">
+                  {videoError ? 'Video unavailable' : 'Project Preview'}
+                </p>
               </div>
             </div>
           )}
@@ -160,8 +205,18 @@ function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCar
             </div>
           )}
           
+          {/* Video Play Indicator */}
+          {project.videoUrl && (
+            <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-black/70 backdrop-blur-sm text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg flex items-center gap-1">
+              <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              Video
+            </div>
+          )}
+          
           {/* Category Badge */}
-          <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-white/90 backdrop-blur-sm text-slate-800 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg">
+          <div className={`absolute ${project.videoUrl ? 'top-12 right-3 sm:top-16 sm:right-4' : 'top-3 right-3 sm:top-4 sm:right-4'} bg-white/90 backdrop-blur-sm text-slate-800 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg`}>
             {project.category}
           </div>
           
@@ -169,14 +224,31 @@ function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCar
           <div className={`hidden sm:flex absolute inset-0 items-center justify-center transition-all duration-500 ${
             isHovered ? 'opacity-100' : 'opacity-0'
           }`}>
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-slate-800 px-6 py-3 rounded-full font-semibold shadow-xl hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-110"
-            >
-              View Live
-            </a>
+            <div className="flex gap-3">
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-slate-800 px-6 py-3 rounded-full font-semibold shadow-xl hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-110"
+              >
+                View Live
+              </a>
+              {project.videoUrl && !videoError && (
+                <button
+                  onClick={() => {
+                    if (videoRef.current) {
+                      videoRef.current.play().catch(console.error);
+                    }
+                  }}
+                  className="bg-black/70 text-white px-6 py-3 rounded-full font-semibold shadow-xl hover:bg-black transition-all duration-300 transform hover:scale-110 flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                  Play Video
+                </button>
+              )}
+            </div>
           </div>
         </div>
 

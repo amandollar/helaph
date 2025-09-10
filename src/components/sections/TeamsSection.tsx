@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { Users, Target, Trophy, Zap } from "lucide-react";
 import Heading from "../ui/Heading";
 import { TEAM_MEMBERS } from "../../constants";
@@ -79,19 +80,19 @@ export default function TeamsSection() {
         {/* Team Stats - Floating Cards */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           <FloatingStatCard 
-            number="3"
+            number="2"
             label="Core Team"
             icon={<Users className="w-8 h-8" />}
             delay="0s"
           />
           <FloatingStatCard 
-            number="15+"
+            number="4+"
             label="Years Combined"
             icon={<Target className="w-8 h-8" />}
             delay="0.2s"
           />
           <FloatingStatCard 
-            number="50+"
+            number="10+"
             label="Projects Delivered"
             icon={<Trophy className="w-8 h-8" />}
             delay="0.4s"
@@ -137,11 +138,13 @@ function HexagonCard({ member, isActive, isHovered, onHover, onLeave, onClick }:
         } ${isHovered ? 'shadow-2xl' : 'shadow-xl'}`}>
           <div className="absolute inset-2 bg-slate-900 rounded-full flex items-center justify-center overflow-hidden">
             {!imageError ? (
-              <img
+              <Image
                 src={member.image}
                 alt={member.name}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
                 onError={() => setImageError(true)}
+                sizes="192px"
               />
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center">

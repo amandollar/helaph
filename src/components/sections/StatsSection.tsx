@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Card from "../ui/Card";
 import Heading from "../ui/Heading";
 import { SERVICES, STATS } from "../../constants";
@@ -42,10 +43,10 @@ export default function StatsSection() {
           
           <Card animated>
             <Heading level={3} size="3xl" className="text-slate-800">
-              {STATS.funding}
+              7
             </Heading>
             <p className="text-sm mt-2 font-indie font-normal tracking-wide text-slate-600">
-              in funding raised by start-ups we&apos;ve worked with.
+              successful projects delivered to satisfied clients.
             </p>
           </Card>
         </div>
@@ -70,14 +71,18 @@ export default function StatsSection() {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <div className="flex -space-x-2">
-                <img
+                <Image
                   src="https://i.pravatar.cc/40?img=1"
                   alt="Sarah Johnson"
+                  width={40}
+                  height={40}
                   className="w-10 h-10 rounded-full border-3 border-white shadow-md"
                 />
-                <img
+                <Image
                   src="https://i.pravatar.cc/40?img=2"
                   alt="Mike Chen"
+                  width={40}
+                  height={40}
                   className="w-10 h-10 rounded-full border-3 border-white shadow-md"
                 />
                 <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black text-sm font-bold border-3 border-white shadow-md">

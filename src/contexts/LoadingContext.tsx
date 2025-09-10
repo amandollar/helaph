@@ -12,10 +12,10 @@ export function LoadingProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate app initialization time
+    // Minimal loading time for smooth UX
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // 2 seconds loading time
+    }, 300); // 300ms for smooth transition
 
     return () => clearTimeout(timer);
   }, []);

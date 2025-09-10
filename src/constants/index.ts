@@ -42,7 +42,7 @@ export const BREAKPOINTS = {
 
 // Contact Info
 export const CONTACT = {
-  whatsapp: "https://wa.me/6206103436",
+  whatsapp: "https://wa.me/916206103436",
   email: "amanreal122@gmail.com",
   phone: "+91 6206103436",
   address: "India"
@@ -51,11 +51,11 @@ export const CONTACT = {
 // Services
 export const SERVICES = [
   "Web Design",
-  "Social Media", 
-  "Marketing",
-  "Paid Ads",
-  "Branding",
-  "Content Creation"
+  "App Development", 
+  "Landing Pages",
+  "Portfolio Websites",
+  "Full-Stack Applications",
+  "Mobile Applications"
 ] as const;
 
 // Main Service Offerings
@@ -64,7 +64,7 @@ export const MAIN_SERVICES = [
     id: "landing-pages",
     title: "Landing Pages",
     description: "High-converting landing pages that turn visitors into customers",
-    videoUrl: "/videos/landing-pages.mp4",
+    videoUrl: "/videos/LandingPage.mp4",
     thumbnail: "/images/LandingPage.png",
     features: ["Responsive Design", "SEO Optimized", "Fast Loading", "A/B Testing"]
   },
@@ -72,7 +72,7 @@ export const MAIN_SERVICES = [
     id: "full-stack-apps",
     title: "Full-Stack Applications",
     description: "Complete web applications with frontend, backend, and database",
-    videoUrl: "/videos/full-stack-apps.mp4", 
+    videoUrl: "/videos/FullStack.mp4", 
     thumbnail: "/images/FullStack.png",
     features: ["Modern Tech Stack", "Scalable Architecture", "API Integration", "Cloud Deployment"]
   },
@@ -80,7 +80,7 @@ export const MAIN_SERVICES = [
     id: "mobile-apps",
     title: "Mobile Applications",
     description: "Native and cross-platform mobile apps for iOS and Android",
-    videoUrl: "/videos/mobile-apps.mp4",
+    videoUrl: "/videos/App.mp4",
     thumbnail: "/images/MobileApp.png", 
     features: ["Cross-Platform", "Native Performance", "App Store Ready", "Push Notifications"]
   },
@@ -88,7 +88,7 @@ export const MAIN_SERVICES = [
     id: "portfolio-websites",
     title: "Portfolio Websites",
     description: "Professional portfolio websites that showcase your work and attract clients",
-    videoUrl: "/videos/portfolio-websites.mp4",
+    videoUrl: "/videos/Portfolio.mp4",
     thumbnail: "/images/Portfolio.png",
     features: ["Professional Design", "Portfolio Gallery", "Contact Forms", "SEO Ready"]
   }
@@ -96,164 +96,105 @@ export const MAIN_SERVICES = [
 
 // Stats
 export const STATS = {
-  users: "1.2M+",
-  funding: "$3M"
+  users: "1000+",
 } as const;
 
 // Projects Showcase
 export const PROJECTS = [
   {
-    id: "ecommerce-platform",
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard",
-    image: "/images/projects/ecommerce-preview.jpg",
-    liveUrl: "https://ecommerce-demo.helaph.com",
-    githubUrl: "https://github.com/helaph/ecommerce-platform",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
+    id: "eduhaven-learning-platform",
+    title: "EduHaven - Collaborative Learning Platform",
+    description: "A comprehensive full-stack educational platform featuring interactive video lectures, real-time quizzes, discussion forums, and progress tracking. Built with modern web technologies to provide seamless learning experiences for students and educators.",
+    image: "/images/EduHaven.png",
+    liveUrl: "https://eduhaven.online/",
+    technologies: ["React", "Node.js", "Express.js", "MongoDB", "Firebase", "Tailwind CSS", "Socket.io"],
     category: "Full-Stack Application",
     featured: true
   },
   {
-    id: "portfolio-website",
-    title: "Portfolio Website",
-    description: "Modern, responsive portfolio website with smooth animations and contact forms",
-    image: "/images/projects/portfolio-preview.jpg",
-    liveUrl: "https://portfolio-demo.helaph.com",
-    githubUrl: "https://github.com/helaph/portfolio-website",
-    technologies: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
-    category: "Portfolio Website",
+    id: "unitrade-trading-platform",
+    title: "Unitrade - Modern Trading Platform",
+    description: "A sleek and responsive landing page for a cryptocurrency trading platform featuring real-time market data, interactive charts, and user-friendly interface. Designed to convert visitors into active traders.",
+    image: "/images/Unitrade.png",
+    videoUrl: "/videos/tradeWebsite.mp4",
+    liveUrl: "https://uni-trade-nine.vercel.app/",
+    technologies: ["React", "Tailwind CSS", "Framer Motion", "Chart.js"],
+    category: "Landing Page",
     featured: true
   },
   {
-    id: "mobile-app",
-    title: "Task Management App",
-    description: "Cross-platform mobile app for task management with real-time synchronization",
-    image: "/images/projects/mobile-app-preview.jpg",
-    liveUrl: "https://apps.apple.com/app/taskmanager",
-    githubUrl: "https://github.com/helaph/task-manager-app",
-    technologies: ["React Native", "Firebase", "Redux", "Expo"],
+    id: "eventviewz-management-system",
+    title: "EventViewz - Event Management System",
+    description: "A complete event management solution with event creation, ticket booking, payment processing, and attendee management. Features include real-time updates, QR code generation, and comprehensive admin dashboard.",
+    image: "/images/Eventviewz.png",
+    videoUrl: "/videos/eventViewz.mp4",
+    liveUrl: "https://eventviewz.com/",
+    technologies: ["React", "Node.js", "Express.js", "MongoDB", "Razorpay", "Tailwind CSS", "JWT"],
+    category: "Full-Stack Application",
+    featured: true
+  },
+  {
+    id: "gamedog-gaming-platform",
+    title: "GameDog - Gaming Discovery Platform",
+    description: "An innovative gaming platform that helps users discover new games, track updates, and connect with the gaming community. Features include game recommendations, news aggregation, and social features for gamers.",
+    image: "/images/Gamedogg.png",
+    liveUrl: "https://gamedog.vercel.app/",
+    technologies: ["React", "Node.js", "Express.js", "MongoDB", "Firebase", "Tailwind CSS", "REST APIs"],
+    category: "Full-Stack Application",
+    featured: true
+  },
+  {
+    id: "focusdoc-mobile-app",
+    title: "FocusDoc - Productivity Mobile App",
+    description: "A cross-platform mobile application designed to boost productivity with focus timers, task management, and habit tracking. Available on both Android and iOS with offline functionality and cloud sync.",
+    image: "/images/FocusDoc.jpeg",
+    videoUrl: "/videos/focusDock.mp4",
+    liveUrl: "https://play.google.com/store/apps/details?id=com.rishukumarcodes.Standbyclock",
+    technologies: ["React Native", "Expo", "Firebase", "AsyncStorage", "Push Notifications"],
     category: "Mobile Application",
     featured: true
   },
   {
-    id: "landing-page",
-    title: "SaaS Landing Page",
-    description: "High-converting landing page for SaaS product with A/B testing and analytics",
-    image: "/images/projects/landing-page-preview.jpg",
-    liveUrl: "https://saas-landing.helaph.com",
-    githubUrl: "https://github.com/helaph/saas-landing",
-    technologies: ["Next.js", "Framer Motion", "Tailwind CSS", "Vercel Analytics"],
-    category: "Landing Page",
-    featured: false
+    id: "akshupie-portfolio-website",
+    title: "AkshuPie - Professional Portfolio",
+    description: "A modern, responsive portfolio website showcasing professional work, skills, and achievements. Features smooth animations, dark/light mode, and optimized performance for maximum impact.",
+    image: "/images/AkshuPie.png",
+    liveUrl: "https://askhupie.vercel.app/",
+    technologies: ["React", "Tailwind CSS", "Framer Motion", "TypeScript", "Vercel"],
+    category: "Portfolio Website",
+    featured: true
   },
   {
-    id: "dashboard-app",
-    title: "Analytics Dashboard",
-    description: "Real-time analytics dashboard with data visualization and reporting features",
-    image: "/images/projects/dashboard-preview.jpg",
-    liveUrl: "https://dashboard-demo.helaph.com",
-    githubUrl: "https://github.com/helaph/analytics-dashboard",
-    technologies: ["React", "D3.js", "Node.js", "PostgreSQL", "Chart.js"],
-    category: "Full-Stack Application",
-    featured: false
-  },
-  {
-    id: "restaurant-website",
-    title: "Restaurant Website",
-    description: "Beautiful restaurant website with online ordering, menu management, and reservations",
-    image: "/images/projects/restaurant-preview.jpg",
-    liveUrl: "https://restaurant-demo.helaph.com",
-    githubUrl: "https://github.com/helaph/restaurant-website",
-    technologies: ["Next.js", "Stripe", "Prisma", "PostgreSQL", "Tailwind CSS"],
-    category: "Business Website",
-    featured: false
+    id: "creative-portfolio-website",
+    title: "Creative - Modern Portfolio",
+    description: "A stunning portfolio website featuring interactive animations, project showcases, and client testimonials. Built with performance optimization and SEO best practices for maximum visibility and engagement.",
+    image: "/images/Portfolio.png",
+    liveUrl: "https://creative-portfolio-website.vercel.app/",
+    technologies: ["GSAP", "TypeScript", "Tailwind CSS", "Framer Motion", "Sanity CMS", "Vercel"],
+    category: "Portfolio Website",
+    featured: true
   }
 ] as const;
 
 // Team Members
 export const TEAM_MEMBERS = [
   {
-    id: "founder-ceo",
-    name: "Alex Johnson",
-    role: "Founder & CEO",
-    bio: "Visionary leader with 8+ years in digital transformation. Passionate about creating solutions that drive real business impact.",
-    image: "/images/team/alex-johnson.jpg",
-    social: {
-      linkedin: "https://linkedin.com/in/alexjohnson",
-      twitter: "https://twitter.com/alexjohnson",
-      email: "alex@helaph.com"
-    },
-    skills: ["Strategy", "Leadership", "Product Vision"],
+    id: "engineer-1",
+    name: "Aman Sharma",
+    role: "Backend Developer",
+    bio: "Full-stack developer with 2+ years of experience in building scalable web applications. Specializes in Node.js, MongoDB, and cloud technologies.",
+    image: "/images/aman.jpeg",
+    skills: ["Node.js", "Express.js", "MongoDB", "Firebase", "Tailwind CSS", "Socket.io"],
     featured: true
   },
   {
-    id: "lead-developer",
-    name: "Sarah Chen",
-    role: "Lead Developer",
-    bio: "Full-stack expert specializing in modern web technologies. Loves building scalable applications that users love.",
-    image: "/images/team/sarah-chen.jpg",
-    social: {
-      linkedin: "https://linkedin.com/in/sarahchen",
-      github: "https://github.com/sarahchen",
-      email: "sarah@helaph.com"
-    },
-    skills: ["React", "Node.js", "TypeScript"],
+    id: "engineer-2",
+    name: "Rishu Kumar",
+    role: "Frontend Developer",
+    bio: "Frontend specialist with 2+ years of experience in React and modern web technologies. Passionate about creating responsive and interactive user interfaces.",
+    image: "/images/rishu.png",
+    skills: ["React", "Tailwind CSS", "Framer Motion", "TypeScript", "Vercel"],
     featured: true
-  },
-  {
-    id: "design-director",
-    name: "Marcus Rodriguez",
-    role: "Design Director",
-    bio: "Creative director with an eye for detail. Transforms complex ideas into beautiful, intuitive user experiences.",
-    image: "/images/team/marcus-rodriguez.jpg",
-    social: {
-      linkedin: "https://linkedin.com/in/marcusrodriguez",
-      dribbble: "https://dribbble.com/marcusrodriguez",
-      email: "marcus@helaph.com"
-    },
-    skills: ["UI/UX", "Branding", "Figma"],
-    featured: true
-  },
-  {
-    id: "mobile-specialist",
-    name: "Emma Thompson",
-    role: "Mobile Specialist",
-    bio: "Cross-platform mobile expert who creates apps that work seamlessly across all devices and platforms.",
-    image: "/images/team/emma-thompson.jpg",
-    social: {
-      linkedin: "https://linkedin.com/in/emmathompson",
-      twitter: "https://twitter.com/emmathompson",
-      email: "emma@helaph.com"
-    },
-    skills: ["React Native", "Flutter", "iOS"],
-    featured: false
-  },
-  {
-    id: "devops-engineer",
-    name: "David Kim",
-    role: "DevOps Engineer",
-    bio: "Infrastructure specialist ensuring our applications are fast, secure, and always available for our clients.",
-    image: "/images/team/david-kim.jpg",
-    social: {
-      linkedin: "https://linkedin.com/in/davidkim",
-      github: "https://github.com/davidkim",
-      email: "david@helaph.com"
-    },
-    skills: ["AWS", "Docker", "Kubernetes"],
-    featured: false
-  },
-  {
-    id: "project-manager",
-    name: "Lisa Wang",
-    role: "Project Manager",
-    bio: "Organizational mastermind who keeps projects on track and clients happy. Expert in agile methodologies.",
-    image: "/images/team/lisa-wang.jpg",
-    social: {
-      linkedin: "https://linkedin.com/in/lisawang",
-      email: "lisa@helaph.com"
-    },
-    skills: ["Agile", "Scrum", "Client Relations"],
-    featured: false
   }
 ] as const;
 
