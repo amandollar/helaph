@@ -137,7 +137,7 @@ export const PROJECTS = [
     id: "gamedog-gaming-platform",
     title: "GameDog - Gaming Discovery Platform",
     description: "An innovative gaming platform that helps users discover new games, track updates, and connect with the gaming community. Features include game recommendations, news aggregation, and social features for gamers.",
-    image: "/images/Gamedogg.png",
+    image: "/images/Gamedog.png",
     liveUrl: "https://gamedog.vercel.app/",
     technologies: ["React", "Node.js", "Express.js", "MongoDB", "Firebase", "Tailwind CSS", "REST APIs"],
     category: "Full-Stack Application",
