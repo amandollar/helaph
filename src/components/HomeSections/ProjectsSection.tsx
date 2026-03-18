@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { DM_Sans } from "next/font/google";
 import { PROJECTS } from "../../constants";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -149,7 +149,7 @@ function ProjectCard({
   );
 }
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -160,7 +160,7 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
