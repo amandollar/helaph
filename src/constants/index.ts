@@ -1,12 +1,12 @@
 // Brand Colors
 export const COLORS = {
-  primary: "#bb64ea",
-  secondary: "#5c9bed", 
-  accent: "#F6D96B",
+  primary: "#FF6B46",
+  secondary: "#FF8F72", 
+  accent: "#FFB09C",
   text: {
-    primary: "#1a1a1a",
-    secondary: "#64748b",
-    light: "#f8fafc"
+    primary: "#F0EDE8",
+    secondary: "#7A7875",
+    light: "#F0EDE8"
   }
 } as const;
 

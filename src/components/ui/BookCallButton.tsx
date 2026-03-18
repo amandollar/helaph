@@ -7,7 +7,7 @@ interface BookCallButtonProps {
 }
 
 export default function BookCallButton({ 
-  children = "Book a Call",
+  children = "Start your project",
   className = ""
 }: BookCallButtonProps) {
   return (

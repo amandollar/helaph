@@ -1,26 +1,24 @@
 import type { Metadata } from "next";
-import { 
-  Indie_Flower
-} from "next/font/google";
-import { LoadingProvider } from "../contexts/LoadingContext";
+import { DM_Sans } from "next/font/google";
+import SmoothScrollProvider from "../components/ui/SmoothScrollProvider";
 import "./globals.css";
 
-const indieFlower = Indie_Flower({
-  variable: "--font-indie-flower",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "helaph Solutions - Web Development & Digital Solutions",
-    template: "%s | helaph Solutions"
+    default: "helaph — We Build Digital Products That Scale",
+    template: "%s | helaph"
   },
-  description: "Professional web development services including full-stack applications, mobile apps, landing pages, and portfolio websites. Turning ideas into impact with modern technology.",
+  description: "We build full-stack web apps, mobile experiences, and high-converting landing pages. From MVPs to enterprise platforms — turning your vision into reality.",
   keywords: [
-    "web development",
-    "full-stack development", 
+    "web development agency",
+    "full-stack development",
     "mobile app development",
     "landing pages",
     "portfolio websites",
@@ -28,11 +26,13 @@ export const metadata: Metadata = {
     "Next.js",
     "Node.js",
     "MongoDB",
-    "TypeScript"
+    "TypeScript",
+    "helaph",
+    "coding agency"
   ],
-  authors: [{ name: "helaph Solutions" }],
-  creator: "helaph Solutions",
-  publisher: "helaph Solutions",
+  authors: [{ name: "helaph" }],
+  creator: "helaph",
+  publisher: "helaph",
   formatDetection: {
     email: false,
     address: false,
@@ -46,22 +46,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://helaph.com',
-    title: 'helaph Solutions - Web Development & Digital Solutions',
-    description: 'Professional web development services including full-stack applications, mobile apps, landing pages, and portfolio websites.',
-    siteName: 'helaph Solutions',
+    title: 'helaph — We Build Digital Products That Scale',
+    description: 'Full-stack web apps, mobile experiences, and high-converting landing pages.',
+    siteName: 'helaph',
     images: [
       {
         url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'helaph Solutions - Web Development Services',
+        alt: 'helaph — Digital Products That Scale',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'helaph Solutions - Web Development & Digital Solutions',
-    description: 'Professional web development services including full-stack applications, mobile apps, landing pages, and portfolio websites.',
+    title: 'helaph — We Build Digital Products That Scale',
+    description: 'Full-stack web apps, mobile experiences, and high-converting landing pages.',
     images: ['/images/twitter-image.png'],
   },
   robots: {
@@ -75,9 +75,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
-  },
 };
 
 export default function RootLayout({
@@ -88,11 +85,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${indieFlower.variable} antialiased`}
+        className={`${dmSans.variable} font-dm-sans antialiased`}
+        style={{ fontFamily: 'var(--font-dm-sans), system-ui, sans-serif' }}
       >
-        <LoadingProvider>
+        <SmoothScrollProvider>
           {children}
-        </LoadingProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

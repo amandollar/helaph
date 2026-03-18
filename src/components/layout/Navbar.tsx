@@ -1,186 +1,208 @@
-'use client';
+"use client";
+
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const navLinks = [
+  { href: "/projects", label: "Work" },
+  { href: "/#services", label: "Services" },
+  { href: "/#contact", label: "Contact" },
+];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+    }
+    return () => {
+      if (typeof document !== "undefined") {
+        document.body.style.overflow = "";
+      }
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <>
-      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? "py-3 bg-slate-800/90 backdrop-blur-md shadow-lg" : "py-6 bg-transparent"}`}>
-        <div className="container mx-auto px-4 flex justify-center">
-          <div className={`w-full sm:w-[90%] md:w-[85%] lg:w-[70%] xl:w-[50%] flex items-center justify-between text-white px-4 sm:px-6 py-3 rounded-full shadow-lg transition-all duration-300 ${isScrolled ? "bg-slate-800/80 backdrop-blur-sm border border-slate-600/50" : "bg-slate-900/60 backdrop-blur-sm border border-slate-700/30"}`}>
-            {/* Logo */}
-            <Link href="/" className="font-indie font-normal text-2xl text-white flex items-center tracking-wider">
-              <span className="bg-yellow-400 text-black rounded-full w-8 h-8 flex items-center justify-center mr-3 font-indie font-normal text-lg">h</span>
-              <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+      {/* PERSISTENT CTA - Fixed at Top Right */}
+      <motion.div
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="fixed top-0 right-0 z-[60] p-6 sm:p-8 lg:px-16 lg:py-8 pointer-events-none"
+      >
+        <Link
+          href="/#contact"
+          className="inline-flex items-center gap-2.5 bg-accent text-white text-[14px] lg:text-[16px] font-semibold tracking-[0.06em] px-8 py-4 rounded-[2px] border border-accent hover:bg-[#e85a35] hover:border-[#e85a35] pointer-events-auto transition-colors duration-200 group"
+        >
+          <span>Start your project</span>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="transition-transform duration-200 group-hover:translate-x-[2px]"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </Link>
+      </motion.div>
+
+      {/* MAIN NAV - Scrolling with header */}
+      <motion.nav
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+        className="absolute top-0 left-0 w-full z-50 py-8 px-6 sm:px-8 lg:px-16"
+      >
+        <div className="w-full grid grid-cols-3 items-center">
+          {/* Logo - LEFT */}
+          <div className="flex justify-start">
+            <Link href="/" className="flex items-center gap-2 group">
+              <span className="text-white font-bold text-lg tracking-tight uppercase">
                 helaph
               </span>
             </Link>
+          </div>
 
-            {/* Divider - Hidden on mobile */}
-            <span className="w-px h-6 bg-slate-600 hidden md:block"></span>
-
-            {/* Menu Items - Hidden on mobile */}
-            <ul className="hidden lg:flex gap-8 xl:gap-10 text-sm xl:text-base">
-              <li className="cursor-pointer group">
-                <Link href="#services" className="font-indie font-normal text-slate-300 hover:text-yellow-400 transition-all duration-500 group-hover:tracking-widest relative tracking-wide">
-                  Services
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover:w-full transition-all duration-700 ease-out"></span>
-                </Link>
-              </li>
-              <li className="cursor-pointer group">
-                <Link href="#projects" className="font-indie font-normal text-slate-300 hover:text-yellow-400 transition-all duration-500 group-hover:tracking-widest relative tracking-wide">
-                  Projects
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover:w-full transition-all duration-700 ease-out"></span>
-                </Link>
-              </li>
-              <li className="cursor-pointer group">
-                <Link href="#team" className="font-indie font-normal text-slate-300 hover:text-yellow-400 transition-all duration-500 group-hover:tracking-widest relative tracking-wide">
-                  Team
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover:w-full transition-all duration-700 ease-out"></span>
-                </Link>
-              </li>
-              <li className="cursor-pointer group">
-                <Link href="#testimonials" className="font-indie font-normal text-slate-300 hover:text-yellow-400 transition-all duration-500 group-hover:tracking-widest relative tracking-wide">
-                  Testimonials
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover:w-full transition-all duration-700 ease-out"></span>
-                </Link>
-              </li>
-              <li className="cursor-pointer group">
-                <Link href="#contact" className="font-indie font-normal text-slate-300 hover:text-yellow-400 transition-all duration-500 group-hover:tracking-widest relative tracking-wide">
-                  Contact
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover:w-full transition-all duration-700 ease-out"></span>
-                </Link>
-              </li>
+          {/* Nav Links - CENTER */}
+          <div className="flex justify-center flex-1">
+            <ul className="hidden md:flex items-center gap-10">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-[12px] font-medium tracking-[0.2em] uppercase text-text-secondary hover:text-text-primary transition-colors duration-300"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
+          </div>
 
-            {/* Tablet Menu - Show on md screens */}
-            <ul className="hidden md:flex lg:hidden gap-6 text-sm">
-              <li className="cursor-pointer group">
-                <Link href="#services" className="font-indie font-normal text-slate-300 hover:text-yellow-400 transition-all duration-500 group-hover:tracking-widest relative tracking-wide">
-                  Services
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover:w-full transition-all duration-700 ease-out"></span>
-                </Link>
-              </li>
-              <li className="cursor-pointer group">
-                <Link href="#projects" className="font-indie font-normal text-slate-300 hover:text-yellow-400 transition-all duration-500 group-hover:tracking-widest relative tracking-wide">
-                  Projects
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover:w-full transition-all duration-700 ease-out"></span>
-                </Link>
-              </li>
-              <li className="cursor-pointer group">
-                <Link href="#team" className="font-indie font-normal text-slate-300 hover:text-yellow-400 transition-all duration-500 group-hover:tracking-widest relative tracking-wide">
-                  Team
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover:w-full transition-all duration-700 ease-out"></span>
-                </Link>
-              </li>
-              <li className="cursor-pointer group">
-                <Link href="#testimonials" className="font-indie font-normal text-slate-300 hover:text-yellow-400 transition-all duration-500 group-hover:tracking-widest relative tracking-wide">
-                  Reviews
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover:w-full transition-all duration-700 ease-out"></span>
-                </Link>
-              </li>
-              <li className="cursor-pointer group">
-                <Link href="#contact" className="font-indie font-normal text-slate-300 hover:text-yellow-400 transition-all duration-500 group-hover:tracking-widest relative tracking-wide">
-                  Contact
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover:w-full transition-all duration-700 ease-out"></span>
-                </Link>
-              </li>
-            </ul>
-
-
-
-            {/* Mobile Menu Button */}
+          {/* Right Side - Hamburger (Mobile) */}
+          <div className="flex justify-end pr-32 md:pr-0">
             <button
-              className="lg:hidden flex flex-col justify-center items-center w-8 h-8"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center group pointer-events-auto"
               aria-label="Toggle menu"
             >
-              <span className="bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm"></span>
-              <span className="bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-1.5"></span>
-              <span className="bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm"></span>
+              <span
+                className={`block h-0.5 bg-white rounded-full transition-all duration-300 ${isMobileMenuOpen ? "w-5 rotate-45 translate-y-2" : "w-5"}`}
+              />
+              <span
+                className={`block h-0.5 bg-white rounded-full transition-all duration-300 ${isMobileMenuOpen ? "opacity-0 w-0" : "w-4"}`}
+              />
+              <span
+                className={`block h-0.5 bg-white rounded-full transition-all duration-300 ${isMobileMenuOpen ? "w-5 -rotate-45 -translate-y-2" : "w-5"}`}
+              />
             </button>
           </div>
         </div>
+      </motion.nav>
 
-        {/* Mobile Menu */}
-        <div className={`lg:hidden fixed top-0 left-0 w-full h-screen bg-slate-900/95 backdrop-blur-lg flex flex-col items-center justify-center transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-          <button
-            className={`absolute top-6 right-6 text-white text-5xl font-indie font-normal hover:text-yellow-400 transition-all duration-500 hover:scale-110 hover:rotate-90 ${isMobileMenuOpen ? 'animate-fade-in-up' : 'opacity-0 translate-y-4'}`}
-            onClick={() => setIsMobileMenuOpen(false)}
-            aria-label="Close menu"
-            style={{ animationDelay: '0.8s' }}
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-[70] bg-[#080809] flex flex-col"
           >
-            &times;
-          </button>
+            <div className="p-8 flex justify-between items-center">
+              <Link
+                href="/"
+                className="flex items-center gap-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-white font-black">
+                  h
+                </div>
+                <span className="text-white font-bold text-lg uppercase">
+                  helaph
+                </span>
+              </Link>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
 
-          <ul className="flex flex-col items-center gap-10 text-3xl">
-            <li className={`group transform transition-all duration-700 ease-out hover:scale-105 ${isMobileMenuOpen ? 'animate-fade-in-up' : 'opacity-0 translate-y-4'}`} style={{ animationDelay: '0.1s' }}>
-              <Link 
-                href="#services" 
-                className="font-indie font-normal text-slate-300 hover:text-yellow-400 transition-all duration-700 hover:tracking-widest relative block tracking-wider"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Services
-                <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover:w-full transition-all duration-900 ease-out"></span>
-              </Link>
-            </li>
-            <li className={`group transform transition-all duration-700 ease-out hover:scale-105 ${isMobileMenuOpen ? 'animate-fade-in-up' : 'opacity-0 translate-y-4'}`} style={{ animationDelay: '0.2s' }}>
-              <Link 
-                href="#projects" 
-                className="font-indie font-normal text-slate-300 hover:text-yellow-400 transition-all duration-700 hover:tracking-widest relative block tracking-wider"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Projects
-                <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover:w-full transition-all duration-900 ease-out"></span>
-              </Link>
-            </li>
-            <li className={`group transform transition-all duration-700 ease-out hover:scale-105 ${isMobileMenuOpen ? 'animate-fade-in-up' : 'opacity-0 translate-y-4'}`} style={{ animationDelay: '0.3s' }}>
-              <Link 
-                href="#team" 
-                className="font-indie font-normal text-slate-300 hover:text-yellow-400 transition-all duration-700 hover:tracking-widest relative block tracking-wider"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Team
-                <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover:w-full transition-all duration-900 ease-out"></span>
-              </Link>
-            </li>
-            <li className={`group transform transition-all duration-700 ease-out hover:scale-105 ${isMobileMenuOpen ? 'animate-fade-in-up' : 'opacity-0 translate-y-4'}`} style={{ animationDelay: '0.4s' }}>
-              <Link 
-                href="#testimonials" 
-                className="font-indie font-normal text-slate-300 hover:text-yellow-400 transition-all duration-700 hover:tracking-widest relative block tracking-wider"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Testimonials
-                <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover:w-full transition-all duration-900 ease-out"></span>
-              </Link>
-            </li>
-            <li className={`group transform transition-all duration-700 ease-out hover:scale-105 ${isMobileMenuOpen ? 'animate-fade-in-up' : 'opacity-0 translate-y-4'}`} style={{ animationDelay: '0.5s' }}>
-              <Link 
-                href="#contact" 
-                className="font-indie font-normal text-slate-300 hover:text-yellow-400 transition-all duration-700 hover:tracking-widest relative block tracking-wider"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-                <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover:w-full transition-all duration-900 ease-out"></span>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
+            <nav className="flex-1 flex flex-col justify-center px-8 gap-6">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.1 }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-[42px] font-light text-text-primary hover:text-accent transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+            </nav>
 
-      {/* Add some spacing at the top for content */}
-      <div className="h-24"></div>
+            <div className="p-8">
+              <Link
+                href="#contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="inline-flex items-center justify-center gap-2.5 bg-accent text-white text-[16px] font-semibold tracking-[0.06em] w-full py-5 rounded-[2px] border border-accent hover:bg-[#e85a35] hover:border-[#e85a35] transition-colors duration-200 group"
+              >
+                <span>Start your project</span>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="transition-transform duration-200 group-hover:translate-x-[2px]"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
