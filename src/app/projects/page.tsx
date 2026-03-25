@@ -161,7 +161,7 @@ export default function ProjectsPage() {
                         src={p.image || "/projects/project-1.png"}
                         alt={p.title}
                         fill
-                        className="object-cover transition-transform duration-1000 ease-[cubic-bezier(0.2,1,0.2,1)] group-hover:scale-[1.05]"
+                        className="object-cover object-top transition-transform duration-1000 ease-[cubic-bezier(0.2,1,0.2,1)] group-hover:scale-[1.05]"
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />

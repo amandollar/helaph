@@ -71,7 +71,7 @@ export const MAIN_SERVICES = [
   {
     id: "full-stack-apps",
     title: "Full-Stack Applications",
-    description: "Complete web applications with frontend, backend, and database",
+    description: "End-to-end engineering of complex web ecosystems. We build scalable, secure, and high-performance applications from the ground up, tailored to your business logic.",
     videoUrl: "/videos/Full-stack.mp4", 
     thumbnail: "/images/FullStack.png",
     features: ["Modern Tech Stack", "Scalable Architecture", "API Integration", "Cloud Deployment"]
@@ -79,7 +79,7 @@ export const MAIN_SERVICES = [
   {
     id: "mobile-apps",
     title: "Mobile Applications",
-    description: "Native and cross-platform mobile apps for iOS and Android",
+    description: "Next-generation mobile experiences for iOS and Android. We leverage native and cross-platform technologies to deliver fluid, responsive, and feature-rich apps.",
     videoUrl: "/videos/App.mp4",
     thumbnail: "/images/MobileApp.png", 
     features: ["Cross-Platform", "Native Performance", "App Store Ready", "Push Notifications"]
@@ -87,7 +87,7 @@ export const MAIN_SERVICES = [
   {
     id: "portfolio-websites",
     title: "Portfolio Websites",
-    description: "Professional portfolio websites that showcase your work and attract clients",
+    description: "Premium digital identity experiences. We craft high-impact, narrative-driven portfolios that showcase your expertise with cinematic quality and technical precision.",
     videoUrl: "/videos/Portfolio.mp4",
     thumbnail: "/images/Portfolio.png",
     features: ["Professional Design", "Portfolio Gallery", "Contact Forms", "SEO Ready"]
@@ -102,87 +102,55 @@ export const STATS = {
 // Projects Showcase
 export const PROJECTS = [
   {
-    id: "eduhaven-learning-platform",
-    title: "EduHaven - Collaborative Learning Platform",
-    description: "A comprehensive full-stack educational platform featuring interactive video lectures, real-time quizzes, discussion forums, and progress tracking. Built with modern web technologies to provide seamless learning experiences for students and educators.",
-    image: "/images/EduHaven.png",
-    liveUrl: "https://eduhaven.online/",
-    technologies: ["React", "Node.js", "Express.js", "MongoDB", "Firebase", "Tailwind CSS", "Socket.io"],
+    id: "rowh-ecommerce",
+    title: "Rowh - Full stack ecommerce platform",
+    description: "A robust, SEO-optimized e-commerce ecosystem engineered with Next.js. Featuring a comprehensive vendor dashboard, secure multi-step checkout, and real-time inventory synchronization for high-scale retail operations.",
+    image: "/projects/rowh-in-img1.png",
+    liveUrl: "https://rowh.in",
+    technologies: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB", "Stripe", "NextAuth"],
     category: "Full-Stack Application",
     featured: true
   },
   {
-    id: "unitrade-trading-platform",
-    title: "Unitrade - Modern Trading Platform",
-    description: "A sleek and responsive landing page for a cryptocurrency trading platform featuring real-time market data, interactive charts, and user-friendly interface. Designed to convert visitors into active traders.",
-    image: "/images/Unitrade.png",
-    videoUrl: "/videos/tradeWebsite.mp4",
-    liveUrl: "https://uni-trade-nine.vercel.app/",
-    technologies: ["React", "Tailwind CSS", "Framer Motion", "Chart.js"],
-    category: "Landing Page",
-    featured: true
-  },
-  {
-    id: "eventviewz-management-system",
+    id: "eventviewz-management",
     title: "EventViewz - Event Management System",
-    description: "A complete event management solution with event creation, ticket booking, payment processing, and attendee management. Features include real-time updates, QR code generation, and comprehensive admin dashboard.",
-    image: "/images/Eventviewz.png",
-    videoUrl: "/videos/eventViewz.mp4",
-    liveUrl: "https://eventviewz.com/",
-    technologies: ["React", "Node.js", "Express.js", "MongoDB", "Razorpay", "Tailwind CSS", "JWT"],
+    description: "A sophisticated multi-tenant event management platform that successfully handled over ₹30k+ in revenue. Built for scalability, it offers seamless registration workflows, dynamic attendee tracking, and integrated analytics.",
+    image: "/projects/eventvewiez-img1.png",
+    liveUrl: "https://eventviewz.com",
+    technologies: ["React", "Node.js", "Express.js", "MongoDB", "Razorpay", "Tailwind CSS"],
     category: "Full-Stack Application",
     featured: true
   },
   {
-    id: "gamedog-gaming-platform",
-    title: "GameDog - Gaming Discovery Platform",
-    description: "An innovative gaming platform that helps users discover new games, track updates, and connect with the gaming community. Features include game recommendations, news aggregation, and social features for gamers.",
-    image: "/images/Gamedog.png",
-    liveUrl: "https://gamedog.vercel.app/",
-    technologies: ["React", "Node.js", "Express.js", "MongoDB", "Firebase", "Tailwind CSS", "REST APIs"],
-    category: "Full-Stack Application",
-    featured: true
-  },
-  {
-    id: "focusdoc-mobile-app",
-    title: "FocusDoc - Productivity Mobile App",
-    description: "A cross-platform mobile application designed to boost productivity with focus timers, task management, and habit tracking. Available on both Android and iOS with offline functionality and cloud sync.",
-    image: "/images/FocusDoc.jpeg",
-    videoUrl: "/videos/focusDock.mp4",
+    id: "focusdoc-standby-clock",
+    title: "FocusDoc - Standby Clock",
+    description: "A minimalist, high-performance productivity application optimized for mobile standby. Designed to enhance cognitive focus through elegant visual feedback and frictionless user interaction. Available on Play Store.",
+    image: "/projects/focus-doc-app.png",
     liveUrl: "https://play.google.com/store/apps/details?id=com.rishukumarcodes.Standbyclock",
-    technologies: ["React Native", "Expo", "Firebase", "AsyncStorage", "Push Notifications"],
+    technologies: ["React Native", "Expo", "Firebase", "Mobile App Development"],
     category: "Mobile Application",
     featured: true
   },
   {
-    id: "akshupie-portfolio-website",
+    id: "akshupie-portfolio",
     title: "AkshuPie - Professional Portfolio",
-    description: "A modern, responsive portfolio website showcasing professional work, skills, and achievements. Features smooth animations, dark/light mode, and optimized performance for maximum impact.",
-    image: "/images/AkshuPie.png",
+    description: "A collection of premium portfolio experiences. Focused on narrative-driven design and micro-animations that elevate personal brands and professional identities to a global standard.",
+    image: "/projects/portfolio1-img.png",
     liveUrl: "https://askhupie.vercel.app/",
     technologies: ["React", "Tailwind CSS", "Framer Motion", "TypeScript", "Vercel"],
     category: "Portfolio Website",
     featured: true
-  },
-  {
-    id: "creative-portfolio-website",
-    title: "Creative - Modern Portfolio",
-    description: "A stunning portfolio website featuring interactive animations, project showcases, and client testimonials. Built with performance optimization and SEO best practices for maximum visibility and engagement.",
-    image: "/images/Portfolio.png",
-    liveUrl: "https://creative-portfolio-website.vercel.app/",
-    technologies: ["GSAP", "TypeScript", "Tailwind CSS", "Framer Motion", "Sanity CMS", "Vercel"],
-    category: "Portfolio Website",
-    featured: true
   }
 ] as const;
+
 
 // Team Members
 export const TEAM_MEMBERS = [
   {
     id: "engineer-1",
     name: "Aman Sharma",
-    role: "Backend Developer",
-    bio: "Full-stack developer with 2+ years of experience in building scalable web applications. Specializes in Node.js, MongoDB, and cloud technologies.",
+    role: "Lead Backend Architect",
+    bio: "Senior Systems Architect with 2+ years of experience engineering high-availability, scalable web infrastructures. Expert in Node.js, distributed databases, and cloud-native solutions.",
     image: "/images/aman.jpeg",
     skills: ["Node.js", "Express.js", "MongoDB", "Firebase", "Tailwind CSS", "Socket.io"],
     featured: true
@@ -190,8 +158,8 @@ export const TEAM_MEMBERS = [
   {
     id: "engineer-2",
     name: "Rishu Kumar",
-    role: "Frontend Developer",
-    bio: "Frontend specialist with 2+ years of experience in React and modern web technologies. Passionate about creating responsive and interactive user interfaces.",
+    role: "Head of Design & Frontend",
+    bio: "Immersive Frontend Specialist with 2+ years of experience crafting high-performance user interfaces. Passionate about motion design and bridging the gap between aesthetics and functionality.",
     image: "/images/rishu.png",
     skills: ["React", "Tailwind CSS", "Framer Motion", "TypeScript", "Vercel"],
     featured: true

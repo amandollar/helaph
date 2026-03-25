@@ -75,7 +75,7 @@ function ProjectCard({
         target="_blank"
         className="block relative overflow-hidden rounded-[2px] bg-surface transition-transform duration-500 ease-out group-hover:-translate-y-2"
       >
-        <div className="relative aspect-[3/4] overflow-hidden">
+        <div className="relative aspect-[16/10] overflow-hidden">
           {hasVideo ? (
             <video
               src={p.videoUrl}
@@ -85,14 +85,14 @@ function ProjectCard({
               playsInline
               preload="metadata"
               poster={p.image}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover object-top"
             />
           ) : (
             <Image
               src={p.image || "/projects/project-1.png"}
               alt={project.title}
               fill
-              className="object-cover"
+              className="object-cover object-top"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             />
           )}
