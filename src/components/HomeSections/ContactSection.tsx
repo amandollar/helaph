@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef, useState, FormEvent } from "react";
+import Image from "next/image";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
@@ -454,9 +455,12 @@ export default function ContactSection() {
       {/* Brand Logo Section - Massive Full Width Display */}
       <div className="mt-32 w-full overflow-hidden pb-4">
         <div className="flex items-center gap-[2vw] group cursor-default justify-center">
-          <img
+          <Image
             src="/images/icons/helpah_dark.webp"
             alt="helaph Logo"
+            width={0}
+            height={0}
+            sizes="12vw"
             className="w-[12vw] h-[12vw] object-contain transition-transform duration-700 ease-out"
           />
           <h2 className="text-white font-black text-[18vw] leading-[0.8] tracking-[-0.05em] uppercase select-none pointer-events-none transition-colors duration-500">

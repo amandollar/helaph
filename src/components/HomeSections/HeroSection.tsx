@@ -16,7 +16,6 @@ const dmSans = DM_Sans({
 });
 
 // ─── Easing curves ────────────────────────────────────────────────────────────
-const EASE_OUT_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const EASE_SNAP: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const ORANGE = "#F07218";
@@ -166,7 +165,7 @@ export default function HeroSection({ skipAnimationProp = false }: { skipAnimati
       }, 4000),
     ];
     return () => timers.forEach(clearTimeout);
-  }, []);
+  }, [skipAnimationProp]);
 
   const isLogoPhase = phase >= 1;
   const isExiting = phase >= 2;

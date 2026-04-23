@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -66,10 +67,12 @@ export default function Navbar() {
           {/* Logo - LEFT */}
           <div className="flex justify-start">
             <Link href="/" className="flex items-center gap-1.5 group">
-              <img 
+              <Image 
                 src="/images/icons/helpah_dark.webp" 
                 alt="helaph Logo" 
-                className="w-[34px] h-[34px] object-contain group-hover:scale-105 transition-transform duration-300"
+                width={34}
+                height={34}
+                className="object-contain group-hover:scale-105 transition-transform duration-300"
               />
               <span className="text-white font-black text-[20px] tracking-tight uppercase">
                 helaph
@@ -130,10 +133,12 @@ export default function Navbar() {
                 className="flex items-center gap-1.5"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <img 
+                <Image 
                   src="/images/icons/helpah_dark.webp" 
                   alt="helaph Logo" 
-                  className="w-[34px] h-[34px] object-contain"
+                  width={34}
+                  height={34}
+                  className="object-contain"
                 />
                 <span className="text-white font-black text-lg uppercase">
                   helaph

@@ -215,7 +215,6 @@ export default function ProjectsPage() {
                     key={p.id}
                     p={p}
                     i={i}
-                    filteredProjects={filteredProjects}
                     openProject={openProject}
                     setIsHoveringCard={setIsHoveringCard}
                   />
@@ -238,14 +237,12 @@ export default function ProjectsPage() {
 function ProjectCard({
   p,
   i,
-  filteredProjects,
   openProject,
   setIsHoveringCard,
 }: {
-  p: any;
+  p: Project;
   i: number;
-  filteredProjects: any[];
-  openProject: any;
+  openProject: (project: Project) => void;
   setIsHoveringCard: (val: boolean) => void;
 }) {
   const isMobile = p.type?.toLowerCase() === "mobile";

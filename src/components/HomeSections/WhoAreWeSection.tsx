@@ -68,7 +68,7 @@ export default function WhoAreWeSection() {
               </h2>
 
               <p className="text-[#110704]/70 text-[15px] sm:text-[16px] lg:text-[17px] font-normal leading-[1.7] max-w-lg">
-                We're a tight-knit team of builders who care deeply about craft.
+                We&apos;re a tight-knit team of builders who care deeply about craft.
                 From pixel-perfect interfaces to robust backend systems, we
                 bring ideas to life with speed, intention, and an obsessive eye
                 for detail — because great digital products deserve nothing

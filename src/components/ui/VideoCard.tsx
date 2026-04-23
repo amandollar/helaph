@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
+import Image from "next/image";
 
 interface VideoCardProps {
   title: string;
@@ -69,10 +70,11 @@ export default function VideoCard({
           <div className="relative aspect-video bg-black rounded-md overflow-hidden tv-screen-glow">
             {/* Thumbnail Image - Shows when video is not playing */}
             {!isPlaying && !isLoading && !showPlaceholder && !thumbnailError && (
-              <img
+              <Image
                 src={thumbnail}
                 alt={title}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
                 onError={() => {
                   console.warn(`Thumbnail ${thumbnail} failed to load`);
                   setThumbnailError(true);
