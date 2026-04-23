@@ -14,4 +14,5 @@ export { default as StatsSection } from "./HomeSections/StatsSection";
 export { default as ServicesSection } from "./HomeSections/ServicesSection";
 export { default as ProjectsSection } from "./HomeSections/ProjectsSection";
 export { default as TestimonialsSection } from "./HomeSections/TestimonialsSection";
+export { default as WhoAreWeSection } from "./HomeSections/WhoAreWeSection";
 export { default as ContactSection } from "./HomeSections/ContactSection";

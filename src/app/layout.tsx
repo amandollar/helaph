@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import SmoothScrollProvider from "../components/ui/SmoothScrollProvider";
+import { ProjectModalProvider } from "../contexts/ProjectModalContext";
+import ProjectModal from "../components/ui/ProjectModal";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -75,6 +77,11 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: "/images/icons/helpah_dark.webp",
+    shortcut: "/images/icons/helpah_dark.webp",
+    apple: "/images/icons/helpah_dark.webp",
+  },
 };
 
 export default function RootLayout({
@@ -88,9 +95,12 @@ export default function RootLayout({
         className={`${dmSans.variable} font-dm-sans antialiased`}
         style={{ fontFamily: 'var(--font-dm-sans), system-ui, sans-serif' }}
       >
-        <SmoothScrollProvider>
-          {children}
-        </SmoothScrollProvider>
+        <ProjectModalProvider>
+          <SmoothScrollProvider>
+            {children}
+          </SmoothScrollProvider>
+          <ProjectModal />
+        </ProjectModalProvider>
       </body>
     </html>
   );

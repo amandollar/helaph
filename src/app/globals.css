@@ -51,22 +51,8 @@
 }
 
 /* --- Custom Scrollbar --- */
-::-webkit-scrollbar {
-  width: 10px;
-}
+/* (Defined at the end of the file for overriding) */
 
-::-webkit-scrollbar-track {
-  background: var(--color-bg-dark);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-accent);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #e85a35; /* Slightly darker orange on hover */
-}
 
 /* ---  Base Reset & Typography --- */
 *, *::before, *::after {
@@ -849,16 +835,23 @@ body {
   background: #070711;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(124, 58, 237, 0.4);
+  background: var(--color-accent);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(124, 58, 237, 0.7);
+  background: #e85a35;
 }
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) #070711;
+}
+
 
 /* Selection */
 ::selection {
-  background: rgba(124, 58, 237, 0.3);
+  background: rgb(211, 76, 42);
   color: #f1f5f9;
 }
 

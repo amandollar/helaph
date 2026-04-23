@@ -32,7 +32,7 @@ export default function Navbar() {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-0 right-0 z-[60] p-6 sm:p-8 lg:px-16 lg:py-8 pointer-events-none"
+        className="fixed bottom-0 md:bottom-auto md:top-0 right-0 z-[60] p-6 sm:p-8 lg:px-16 lg:py-8 pointer-events-none"
       >
         <Link
           href="/#contact"
@@ -65,8 +65,13 @@ export default function Navbar() {
         <div className="w-full grid grid-cols-3 items-center">
           {/* Logo - LEFT */}
           <div className="flex justify-start">
-            <Link href="/" className="flex items-center gap-2 group">
-              <span className="text-white font-bold text-lg tracking-tight uppercase">
+            <Link href="/" className="flex items-center gap-1.5 group">
+              <img 
+                src="/images/icons/helpah_dark.webp" 
+                alt="helaph Logo" 
+                className="w-[34px] h-[34px] object-contain group-hover:scale-105 transition-transform duration-300"
+              />
+              <span className="text-white font-black text-[20px] tracking-tight uppercase">
                 helaph
               </span>
             </Link>
@@ -89,7 +94,7 @@ export default function Navbar() {
           </div>
 
           {/* Right Side - Hamburger (Mobile) */}
-          <div className="flex justify-end pr-32 md:pr-0">
+          <div className="flex justify-end md:pr-0">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center group pointer-events-auto"
@@ -122,13 +127,15 @@ export default function Navbar() {
             <div className="p-8 flex justify-between items-center">
               <Link
                 href="/"
-                className="flex items-center gap-2"
+                className="flex items-center gap-1.5"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-white font-black">
-                  h
-                </div>
-                <span className="text-white font-bold text-lg uppercase">
+                <img 
+                  src="/images/icons/helpah_dark.webp" 
+                  alt="helaph Logo" 
+                  className="w-[34px] h-[34px] object-contain"
+                />
+                <span className="text-white font-black text-lg uppercase">
                   helaph
                 </span>
               </Link>

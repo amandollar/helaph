@@ -56,3 +56,18 @@ export interface Service {
   name: string;
   variant?: "primary" | "secondary" | "accent";
 }
+
+// Project Data
+export interface Project {
+  id: string;
+  name: string;
+  featuredImage: string;
+  homeImage?: string;
+  Graphics: string[];
+  type: "full stack" | "Mobile" | "portfolio" | "Landing";
+  features: string[];
+  "tech stack": string[];
+  "short description": string;
+  "long description": string;
+  LiveLink: string;
+}

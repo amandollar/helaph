@@ -85,7 +85,7 @@ export default function LottieBackground() {
               // Dull amber-orange tint — barely visible on dark bg
               filter:
                 "sepia(1) saturate(6) hue-rotate(330deg) brightness(0.6) contrast(1.1)",
-              opacity: 0.3,
+              opacity: 0.2,
             }}
             rendererSettings={{
               preserveAspectRatio: "xMidYMid slice",

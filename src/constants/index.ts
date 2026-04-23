@@ -43,9 +43,14 @@ export const BREAKPOINTS = {
 // Contact Info
 export const CONTACT = {
   whatsapp: "https://wa.me/916206103436",
-  email: "amanreal122@gmail.com",
+  email: "gethelaph@gmail.com",
   phone: "+91 6206103436",
-  address: "India"
+  address: "Mumbai, India",
+  socials: {
+    x: "https://x.com/gethelaph",
+    linkedin: "https://www.linkedin.com/in/helaph-undefined-02a265403/?skipRedirect=true",
+    instagram: "https://www.instagram.com/gethelaph/"
+  }
 } as const;
 
 // Services
@@ -99,49 +104,11 @@ export const STATS = {
   users: "1000+",
 } as const;
 
+import projectsData from "../data/projects.json";
+import { Project } from "../types";
+
 // Projects Showcase
-export const PROJECTS = [
-  {
-    id: "rowh-ecommerce",
-    title: "Rowh - Full stack ecommerce platform",
-    description: "A robust, SEO-optimized e-commerce ecosystem engineered with Next.js. Featuring a comprehensive vendor dashboard, secure multi-step checkout, and real-time inventory synchronization for high-scale retail operations.",
-    image: "/projects/rowh-in-img1.png",
-    liveUrl: "https://rowh.in",
-    technologies: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB", "Stripe", "NextAuth"],
-    category: "Full-Stack Application",
-    featured: true
-  },
-  {
-    id: "eventviewz-management",
-    title: "EventViewz - Event Management System",
-    description: "A sophisticated multi-tenant event management platform that successfully handled over ₹30k+ in revenue. Built for scalability, it offers seamless registration workflows, dynamic attendee tracking, and integrated analytics.",
-    image: "/projects/eventvewiez-img1.png",
-    liveUrl: "https://eventviewz.com",
-    technologies: ["React", "Node.js", "Express.js", "MongoDB", "Razorpay", "Tailwind CSS"],
-    category: "Full-Stack Application",
-    featured: true
-  },
-  {
-    id: "focusdoc-standby-clock",
-    title: "FocusDoc - Standby Clock",
-    description: "A minimalist, high-performance productivity application optimized for mobile standby. Designed to enhance cognitive focus through elegant visual feedback and frictionless user interaction. Available on Play Store.",
-    image: "/projects/focus-doc-app.png",
-    liveUrl: "https://play.google.com/store/apps/details?id=com.rishukumarcodes.Standbyclock",
-    technologies: ["React Native", "Expo", "Firebase", "Mobile App Development"],
-    category: "Mobile Application",
-    featured: true
-  },
-  {
-    id: "akshupie-portfolio",
-    title: "AkshuPie - Professional Portfolio",
-    description: "A collection of premium portfolio experiences. Focused on narrative-driven design and micro-animations that elevate personal brands and professional identities to a global standard.",
-    image: "/projects/portfolio1-img.png",
-    liveUrl: "https://askhupie.vercel.app/",
-    technologies: ["React", "Tailwind CSS", "Framer Motion", "TypeScript", "Vercel"],
-    category: "Portfolio Website",
-    featured: true
-  }
-] as const;
+export const PROJECTS = projectsData as Project[];
 
 
 // Team Members

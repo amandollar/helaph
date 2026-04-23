@@ -80,7 +80,7 @@ export default function ServicesSection() {
                 </div>
                 
                 {/* Features List */}
-                <div className="md:w-[55%] lg:w-1/2 flex flex-col justify-center">
+                <div className="hidden lg:flex md:w-[55%] lg:w-1/2 flex-col justify-center">
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
                     {service.features.map((feature, fIndex) => (
                       <li key={fIndex} className="flex items-start gap-3 text-[13px] sm:text-[14px] tracking-[0.04em] text-text-secondary group-hover:text-text-primary transition-colors duration-500">

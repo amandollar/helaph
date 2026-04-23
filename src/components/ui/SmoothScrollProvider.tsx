@@ -1,13 +1,17 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Lenis from "lenis";
+import { useProjectModal } from "../../contexts/ProjectModalContext";
 
 export default function SmoothScrollProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const { isOpen } = useProjectModal();
+  const lenisRef = useRef<Lenis | null>(null);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,          // scroll easing duration in seconds
@@ -15,6 +19,8 @@ export default function SmoothScrollProvider({
       orientation: "vertical",
       smoothWheel: true,
     });
+    
+    lenisRef.current = lenis;
 
     // Feed lenis into a requestAnimationFrame loop
     let rafId: number;
@@ -27,8 +33,19 @@ export default function SmoothScrollProvider({
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
+
+  useEffect(() => {
+    if (lenisRef.current) {
+      if (isOpen) {
+        lenisRef.current.stop();
+      } else {
+        lenisRef.current.start();
+      }
+    }
+  }, [isOpen]);
 
   return <>{children}</>;
 }
