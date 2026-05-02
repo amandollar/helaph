@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
+import Script from "next/script";
 import SmoothScrollProvider from "../components/ui/SmoothScrollProvider";
 import { ProjectModalProvider } from "../contexts/ProjectModalContext";
 import ProjectModal from "../components/ui/ProjectModal";
@@ -95,6 +96,15 @@ export default function RootLayout({
         className={`${dmSans.variable} font-dm-sans antialiased`}
         style={{ fontFamily: 'var(--font-dm-sans), system-ui, sans-serif' }}
       >
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "wkwncu9ogm");
+          `}
+        </Script>
         <ProjectModalProvider>
           <SmoothScrollProvider>
             {children}
