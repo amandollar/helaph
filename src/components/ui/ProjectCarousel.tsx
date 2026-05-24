@@ -89,7 +89,7 @@ export default function ProjectCarousel({ images, autoPlayInterval = 4000 }: Pro
             src={images[imageIndex]}
             alt={`Project visual ${imageIndex + 1}`}
             fill
-            className="object-contain"
+            className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, 90vw"
             priority
           />
