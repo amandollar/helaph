@@ -121,7 +121,7 @@ export default function ProjectImageStack({
           />
         </motion.div>
 
-        {/* 3D Tilting Phone Mockup Frame */}
+        {/* 3D Tilting Frame */}
         <motion.div
           style={{
             rotateX: isHovered ? rotateX : 0,
@@ -129,7 +129,7 @@ export default function ProjectImageStack({
             scale,
             transformStyle: "preserve-3d",
           }}
-          className="relative h-full aspect-[9/16] max-h-full overflow-hidden rounded-[24px] border-4 border-[#121214] bg-[#0c0c0e] shadow-[0_20px_50px_rgba(0,0,0,0.65)] flex flex-col z-20"
+          className="relative h-full aspect-[9/16] max-h-full overflow-hidden rounded-[10px] border border-white/10 bg-[#0c0c0e] shadow-[0_20px_50px_rgba(0,0,0,0.65)] flex flex-col z-20"
         >
           {/* In-view entrance swipe reveal */}
           <motion.div
@@ -148,7 +148,7 @@ export default function ProjectImageStack({
           />
 
           {/* Viewport Masked Container */}
-          <div className="relative w-full h-full overflow-hidden rounded-[18px]">
+          <div className="relative w-full h-full overflow-hidden">
             {/* Scrollable vertical image strip */}
             <motion.div
               style={{ y: yTranslate }}
@@ -175,16 +175,6 @@ export default function ProjectImageStack({
             {/* Top and Bottom Cinematic Gradients */}
             <div className="absolute top-0 left-0 right-0 h-14 bg-gradient-to-b from-black/75 via-transparent to-transparent pointer-events-none z-20" />
             <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none z-20" />
-
-            {/* Mobile Status Bar / Dynamic Island Representation */}
-            <div className="absolute top-0 left-0 right-0 h-6 flex items-center justify-center z-30 pointer-events-none">
-              <div className="w-16 h-3 bg-black/90 rounded-full border border-white/5" />
-            </div>
-
-            {/* Home Indicator */}
-            <div className="absolute bottom-1.5 left-0 right-0 flex justify-center z-30 pointer-events-none">
-              <div className="w-16 h-1 bg-white/20 rounded-full" />
-            </div>
           </div>
         </motion.div>
       </div>
