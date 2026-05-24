@@ -157,12 +157,12 @@ export default function HeroSection({ skipAnimationProp = false }: { skipAnimati
 
     const timers = [
       setTimeout(() => setPhase(1), 100),
-      setTimeout(() => setPhase(2), 1900),
-      setTimeout(() => setPhase(3), 1910),
-      setTimeout(() => setPhase(4), 2100),
+      setTimeout(() => setPhase(2), 900),
+      setTimeout(() => setPhase(3), 910),
+      setTimeout(() => setPhase(4), 1100),
       setTimeout(() => {
         setGone(true);
-      }, 4000),
+      }, 2000),
     ];
     return () => timers.forEach(clearTimeout);
   }, [skipAnimationProp]);

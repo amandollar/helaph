@@ -1,6 +1,11 @@
+import path from "path";
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+const nextConfig = {
+  outputFileTracingRoot: path.resolve(__dirname),
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
   // Enable experimental features
   experimental: {
     optimizePackageImports: ['lucide-react'],

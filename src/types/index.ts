@@ -63,11 +63,14 @@ export interface Project {
   name: string;
   featuredImage: string;
   homeImage?: string;
-  Graphics: string[];
-  type: "full stack" | "Mobile" | "portfolio" | "Landing";
+  graphics: string[];
+  type: string;
   features: string[];
-  "tech stack": string[];
-  "short description": string;
-  "long description": string;
-  LiveLink: string;
+  techStack: string[];
+  shortDescription: string;
+  longDescription: string;
+  liveLink: string;
+  industry: string;
+  keyResult: string;
 }
+

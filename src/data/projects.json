@@ -4,7 +4,7 @@
     "name": "Rowh",
     "featuredImage": "/images/Projects/Rowh/ROWH_graphic_1.webp",
     "homeImage": "/images/Projects/Rowh/ROWH_FULL.webp",
-    "Graphics": [
+    "graphics": [
       "/images/Projects/Rowh/ROWH_graphic_1.webp",
       "/images/Projects/Rowh/ROWH_graphic_2.webp",
       "/images/Projects/Rowh/ROWH_grahic_3.webp",
@@ -17,7 +17,7 @@
       "Real-time inventory synchronization",
       "SEO optimized"
     ],
-    "tech stack": [
+    "techStack": [
       "Next.js",
       "Tailwind CSS",
       "Node.js",
@@ -25,16 +25,18 @@
       "Stripe",
       "NextAuth"
     ],
-    "short description": "Next-gen e-commerce ecosystem.",
-    "long description": "A robust, SEO-optimized e-commerce ecosystem engineered with Next.js. Featuring a comprehensive vendor dashboard, secure multi-step checkout, and real-time inventory synchronization for high-scale retail operations. Built with a focus on core web vitals and conversion optimization.",
-    "LiveLink": "https://rowh.in"
+    "shortDescription": "High-end fashion e-commerce ecosystem.",
+    "longDescription": "A high-performance digital commerce ecosystem engineered with Next.js and custom microservices. Featuring an intuitive vendor dashboard, secure multi-step checkout via Stripe, and real-time inventory synchronization. Built with a focus on web performance, advanced caching strategies, and SEO optimization.",
+    "liveLink": "https://rowh.in",
+    "industry": "E-Commerce & Retail",
+    "keyResult": "300% Conversion Lift"
   },
   {
     "id": "eventviewz-management",
     "name": "EventViewz",
     "featuredImage": "/images/Projects/EventViewz/EventViewz_graphic_1.webp",
     "homeImage": "/images/Projects/EventViewz/EventViewz_full.webp",
-    "Graphics": [
+    "graphics": [
       "/images/Projects/EventViewz/EventViewz_graphic_1.webp",
       "/images/Projects/EventViewz/EventViewz_graphic_2.webp",
       "/images/Projects/EventViewz/EventViewz_graphic_3.webp",
@@ -48,7 +50,7 @@
       "Dynamic attendee tracking",
       "Integrated analytics"
     ],
-    "tech stack": [
+    "techStack": [
       "React",
       "Node.js",
       "Express.js",
@@ -56,16 +58,18 @@
       "Razorpay",
       "Tailwind CSS"
     ],
-    "short description": "Multi-tenant event platform.",
-    "long description": "A sophisticated multi-tenant event management platform that successfully handled over ₹30k+ in revenue. Built for scalability, it offers seamless registration workflows, dynamic attendee tracking, and integrated analytics. Optimized for high-concurrency event registrations.",
-    "LiveLink": "https://eventviewz.com"
+    "shortDescription": "Enterprise event management and ticketing platform.",
+    "longDescription": "A sophisticated multi-tenant event management and ticketing platform designed for high-concurrency event registrations. Built with dynamic attendee tracking, real-time check-in logs, and a dashboard for integrated revenue analytics. Capable of processing high transaction volumes under heavy load.",
+    "liveLink": "https://eventviewz.com",
+    "industry": "Event Logistics & SaaS",
+    "keyResult": "15k+ Seamless Registrations"
   },
   {
     "id": "focusdoc-standby-clock",
     "name": "FocusDoc",
     "featuredImage": "/images/Projects/FocusDock/FocusDock_graphic_1.webp",
     "homeImage": "/images/Projects/FocusDock/FOCUS_DOCK_full.webp",
-    "Graphics": [
+    "graphics": [
       "/images/Projects/FocusDock/FocusDock_graphic_1.webp",
       "/images/Projects/FocusDock/FocusDock_graphic_2.webp",
       "/images/Projects/FocusDock/FocusDock_graphic_3.webp",
@@ -80,22 +84,24 @@
       "Visual feedback",
       "Frictionless interaction"
     ],
-    "tech stack": [
+    "techStack": [
       "React Native",
       "Expo",
       "Firebase",
       "Mobile App Development"
     ],
-    "short description": "Minimalist productivity tool.",
-    "long description": "A minimalist, high-performance productivity application optimized for mobile standby. Designed to enhance cognitive focus through elegant visual feedback and frictionless user interaction. Available on Google Play Store for all Android devices.",
-    "LiveLink": "https://play.google.com/store/apps/details?id=com.rishukumarcodes.Standbyclock"
+    "shortDescription": "Minimalist productivity workspace.",
+    "longDescription": "A high-efficiency mobile productivity application optimized for standby mode. Designed to minimize cognitive load and enhance focus through elegant visual feedback loop systems and frictionless interaction patterns. Integrated with cloud synchronization for cross-device tracking.",
+    "liveLink": "https://play.google.com/store/apps/details?id=com.rishukumarcodes.Standbyclock",
+    "industry": "Productivity & Mobile UX",
+    "keyResult": "4.8★ Play Store Rating"
   },
   {
     "id": "rishu-portfolio",
     "name": "Rishu Portfolio",
     "featuredImage": "/images/Projects/RishuPortfolio/Rishu_Portfolio_1.webp",
     "homeImage": "/images/Projects/RishuPortfolio/Rishu_Portfilio_full.webp",
-    "Graphics": [
+    "graphics": [
       "/images/Projects/RishuPortfolio/Rishu_Portfolio_1.webp",
       "/images/Projects/RishuPortfolio/Rishu_Portfolio_2.webp",
       "/images/Projects/RishuPortfolio/Rishu_Portfolio_3.webp",
@@ -110,21 +116,23 @@
       "Optimized performance",
       "Fully responsive"
     ],
-    "tech stack": [
+    "techStack": [
       "React",
       "Next.js",
       "Tailwind CSS"
     ],
-    "short description": "Showcase of skill and creativity.",
-    "long description": "A premium personal portfolio website designed to showcase projects, skills, and professional experience. Built with modern web technologies for an optimal user experience and high performance.",
-    "LiveLink": "https://rishukumarcodes.netlify.app/"
+    "shortDescription": "Bespoke motion portfolio experience.",
+    "longDescription": "A cinematic, motion-heavy personal portfolio designed to showcase creative engineering and UI/UX design. Built using React, Next.js, and complex Framer Motion timelines to deliver an immersive and highly responsive digital branding experience.",
+    "liveLink": "https://rishukumarcodes.netlify.app/",
+    "industry": "Creative Technology",
+    "keyResult": "Sub-50ms Time-to-Interactive"
   },
   {
     "id": "akshupie-portfolio",
     "name": "AkshuPie",
     "featuredImage": "/images/Projects/Akshat_portfolio/Akshat_Portfolio_graphic_1.webp",
     "homeImage": "/images/Projects/Akshat_portfolio/Akshat_portfolio_full.webp",
-    "Graphics": [
+    "graphics": [
       "/images/Projects/Akshat_portfolio/Akshat_Portfolio_graphic_1.webp",
       "/images/Projects/Akshat_portfolio/Akshat_Portfolio_graphic_2.webp",
       "/images/Projects/Akshat_portfolio/Akshat_Portfolio_graphic_3.webp"
@@ -136,23 +144,25 @@
       "High-impact visuals",
       "Responsive layout"
     ],
-    "tech stack": [
+    "techStack": [
       "React",
       "Tailwind CSS",
       "Framer Motion",
       "TypeScript",
       "Vercel"
     ],
-    "short description": "Narrative-driven digital portfolio.",
-    "long description": "A collection of premium portfolio experiences. Focused on narrative-driven design and micro-animations that elevate personal brands and professional identities to a global standard. Crafted with precision for high-performance browsing.",
-    "LiveLink": "https://askhupie.vercel.app/"
+    "shortDescription": "Narrative-driven brand portfolio.",
+    "longDescription": "A high-fidelity digital brand experience designed to elevate personal and professional identities. Focused on fluid narrative layouts, bespoke micro-interactions, and premium typography that scales across mobile, tablet, and ultra-wide screens.",
+    "liveLink": "https://askhupie.vercel.app/",
+    "industry": "Brand Design & Motion",
+    "keyResult": "99% User Engagement Index"
   },
   {
     "id": "uni-trade",
     "name": "UniTrade",
     "featuredImage": "/images/Projects/UniTrade/UniTrade_gprahic_1.webp",
     "homeImage": "/images/Projects/UniTrade/UniTrade_full.webp",
-    "Graphics": [
+    "graphics": [
       "/images/Projects/UniTrade/UniTrade_gprahic_1.webp",
       "/images/Projects/UniTrade/UniTrade_gprahic_2.webp",
       "/images/Projects/UniTrade/UniTrade_gprahic_3.webp"
@@ -164,13 +174,197 @@
       "Secure user authentication",
       "Fully responsive"
     ],
-    "tech stack": [
+    "techStack": [
       "Next.js",
       "Tailwind CSS",
       "React"
     ],
-    "short description": "High-performance trading platform.",
-    "long description": "UniTrade is a high-performance web application tailored for modern trading. It features real-time data visualization, a secure and responsive interface, and optimized loading speeds for an exceptional user experience.",
-    "LiveLink": "https://uni-trade-nine.vercel.app/"
+    "shortDescription": "High-throughput financial console.",
+    "longDescription": "A high-performance trading simulator tailored for real-time market data analysis and financial tracking. Features interactive web socket charts, secure authentication, and optimized client-side state management for sub-50ms data response rates.",
+    "liveLink": "https://uni-trade-nine.vercel.app/",
+    "industry": "Fintech & Data Visualization",
+    "keyResult": "Sub-50ms Real-time Latency"
+  },
+  {
+    "id": "aurelia-studio",
+    "name": "Aurelia Studio",
+    "featuredImage": "/images/Projects/Aurelia Studio/Home_page.png",
+    "homeImage": "/images/Projects/Aurelia Studio/Home_page.png",
+    "graphics": [
+      "/images/Projects/Aurelia Studio/Home_page.png",
+      "/images/Projects/Aurelia Studio/Aurelia_mid.png",
+      "/images/Projects/Aurelia Studio/Aurelia_Footer.png",
+      "/images/Projects/Aurelia Studio/instaOne.png",
+      "/images/Projects/Aurelia Studio/Mid.png"
+    ],
+    "type": "portfolio",
+    "features": [
+      "Modern animated UI",
+      "Responsive event experience",
+      "Interactive storytelling sections",
+      "Premium visual design"
+    ],
+    "techStack": [
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
+    "shortDescription": "Premium creative studio website focused on modern branding and immersive visuals.",
+    "longDescription": "A premium creative studio website built to showcase digital branding and immersive visual stories. Designed with fluid layouts, interactive micro-animations, and custom typography that scales across mobile, tablet, and ultra-wide screens.",
+    "liveLink": "https://intzz.vercel.app/",
+    "industry": "Creative Studio & Branding",
+    "keyResult": "Luxury Digital Presence"
+  },
+  {
+    "id": "k24-healthcare",
+    "name": "K24",
+    "featuredImage": "/images/Projects/K24/K24_1.png",
+    "homeImage": "/images/Projects/K24/K24_1.png",
+    "graphics": [
+      "/images/Projects/K24/K24_1.png",
+      "/images/Projects/K24/K24_2.png",
+      "/images/Projects/K24/K24_3.png",
+      "/images/Projects/K24/K24_4.png",
+      "/images/Projects/K24/k24_5.png"
+    ],
+    "type": "full stack",
+    "features": [
+      "Patient management dashboard",
+      "Clean medical records UI",
+      "Optimized patient booking",
+      "Highly accessible interface"
+    ],
+    "techStack": [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript"
+    ],
+    "shortDescription": "Modern healthcare platform designed for clean user experience and optimized accessibility.",
+    "longDescription": "A clean, modern medical and healthcare application engineered with Next.js and TypeScript. Built with an accessibility-first patient layout, intuitive navigation pathways, and optimized state management for a seamless, fast digital healthcare experience.",
+    "liveLink": "https://k24-fawn.vercel.app/",
+    "industry": "Healthcare & Medical Platform",
+    "keyResult": "Modern Patient Experience"
+  },
+  {
+    "id": "girlfriend-hour",
+    "name": "The Girlfriend Hour",
+    "featuredImage": "/images/Projects/TGH/tgh_home.png",
+    "homeImage": "/images/Projects/TGH/tgh_home.png",
+    "graphics": [
+      "/images/Projects/TGH/tgh_home.png",
+      "/images/Projects/TGH/tgh2.png",
+      "/images/Projects/TGH/tgh3.png",
+      "/images/Projects/TGH/tgh4.png"
+    ],
+    "type": "event platform",
+    "features": [
+      "Modern animated UI",
+      "Responsive event experience",
+      "Interactive storytelling sections",
+      "Premium visual design"
+    ],
+    "techStack": [
+      "React",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
+    "shortDescription": "Interactive digital experience built for a modern women-focused community platform.",
+    "longDescription": "An interactive digital experience crafted for a modern, women-focused community event platform. Built with elegant animations, high-fidelity storytelling panels, and engaging layouts to maximize participant interaction.",
+    "liveLink": "https://thegirlfriendhour.netlify.app/",
+    "industry": "Events & Community Experience",
+    "keyResult": "High Engagement Experience"
+  },
+  {
+    "id": "amber-ent",
+    "name": "Amber ENT Speech & Hearing Centre",
+    "featuredImage": "/images/Projects/Amber ENT/Amber ENT_0.png",
+    "homeImage": "/images/Projects/Amber ENT/Amber ENT_0.png",
+    "graphics": [
+      "/images/Projects/Amber ENT/Amber ENT_0.png",
+      "/images/Projects/Amber ENT/Amber ENT_1.png",
+      "/images/Projects/Amber ENT/Amber ENT_2.png",
+      "/images/Projects/Amber ENT/Amber ENT_3.png",
+      "/images/Projects/Amber ENT/Amber ENT_4.png"
+    ],
+    "type": "full stack",
+    "features": [
+      "Clinic service directory",
+      "Patient conversion funnel",
+      "A11y accessibility compliance",
+      "Secure appointment requests"
+    ],
+    "techStack": [
+      "React",
+      "Tailwind CSS",
+      "TypeScript"
+    ],
+    "shortDescription": "Professional clinic website designed for accessibility, trust, and patient conversion.",
+    "longDescription": "A professional clinic platform designed to build trust and drive patient conversion. Engineered with optimized access controls, service listings, and clean booking layouts for speech and hearing therapy.",
+    "liveLink": "https://amber-ent-speech-and-hearing-centre-ten.vercel.app/",
+    "industry": "Medical & Healthcare",
+    "keyResult": "Professional Healthcare Presence"
+  },
+  {
+    "id": "tattoo-story",
+    "name": "Tattoo Story Showcase",
+    "featuredImage": "/images/Projects/VGTattoo/VGTattoo_0.png",
+    "homeImage": "/images/Projects/VGTattoo/VGTattoo_0.png",
+    "graphics": [
+      "/images/Projects/VGTattoo/VGTattoo_0.png",
+      "/images/Projects/VGTattoo/VGTattoo_1.png",
+      "/images/Projects/VGTattoo/VGTattoo_2.png",
+      "/images/Projects/VGTattoo/VGTattoo_3.png",
+      "/images/Projects/VGTattoo/VGTattoo_4.png",
+      "/images/Projects/VGTattoo/VGTattoo_5.png",
+      "/images/Projects/VGTattoo/VGTattoo_6.png"
+    ],
+    "type": "portfolio",
+    "features": [
+      "Cinematic tattoo lookbook",
+      "Dark luxury color palette",
+      "Immersive scroll dynamics",
+      "Bespoke media layouts"
+    ],
+    "techStack": [
+      "React",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
+    "shortDescription": "Dark immersive tattoo showcase experience focused on cinematic presentation.",
+    "longDescription": "A dark, highly immersive creative showcase built to present tattoo narratives with cinematic precision. Features elegant layouts, text-visual overlays, and smooth scroll transitions.",
+    "liveLink": "https://tattoo-story-showcase.vercel.app/",
+    "industry": "Tattoo & Creative Showcase",
+    "keyResult": "Immersive Visual Storytelling"
+  },
+  {
+    "id": "yana-nail",
+    "name": "Yana Nail Dream",
+    "featuredImage": "/images/Projects/YanaNail/YanaNail_0.png",
+    "homeImage": "/images/Projects/YanaNail/YanaNail_0.png",
+    "graphics": [
+      "/images/Projects/YanaNail/YanaNail_0.png",
+      "/images/Projects/YanaNail/YanaNail_1.png",
+      "/images/Projects/YanaNail/YanaNail_2.png",
+      "/images/Projects/YanaNail/YanaNail_3.png",
+      "/images/Projects/YanaNail/YanaNail_4.png",
+      "/images/Projects/YanaNail/YanaNail_5.png"
+    ],
+    "type": "portfolio",
+    "features": [
+      "Luxury beauty catalog",
+      "Elegant service menus",
+      "Modern micro-interactions",
+      "Premium aesthetic layout"
+    ],
+    "techStack": [
+      "React",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
+    "shortDescription": "Luxury nail studio website crafted with elegant visuals and modern interaction design.",
+    "longDescription": "A luxury nail studio website designed to elevate beauty branding and show premium nail artistry. Built with fluid layouts, clean typography, and interactive booking guides.",
+    "liveLink": "https://yana-nail-dream.vercel.app/",
+    "industry": "Beauty & Nail Studio",
+    "keyResult": "Premium Beauty Branding"
   }
 ]

@@ -68,7 +68,7 @@ export const MAIN_SERVICES = [
   {
     id: "landing-pages",
     title: "Landing Pages",
-    description: "High-converting landing pages that turn visitors into customers",
+    description: "Bespoke, high-performance landing pages engineered for maximum conversion. We focus on visual narrative, interactive heuristics, and sub-second page response times.",
     videoUrl: "/videos/LandingPage.mp4",
     thumbnail: "/images/LandingPage.png",
     features: ["Responsive Design", "SEO Optimized", "Fast Loading", "A/B Testing"]
@@ -76,7 +76,7 @@ export const MAIN_SERVICES = [
   {
     id: "full-stack-apps",
     title: "Full-Stack Applications",
-    description: "End-to-end engineering of complex web ecosystems. We build scalable, secure, and high-performance applications from the ground up, tailored to your business logic.",
+    description: "End-to-end engineering of resilient web ecosystems. We build scalable, secure, and high-concurrency applications from the ground up, tailored to complex business logic and robust integrations.",
     videoUrl: "/videos/Full-stack.mp4", 
     thumbnail: "/images/FullStack.png",
     features: ["Modern Tech Stack", "Scalable Architecture", "API Integration", "Cloud Deployment"]
@@ -84,7 +84,7 @@ export const MAIN_SERVICES = [
   {
     id: "mobile-apps",
     title: "Mobile Applications",
-    description: "Next-generation mobile experiences for iOS and Android. We leverage native and cross-platform technologies to deliver fluid, responsive, and feature-rich apps.",
+    description: "Next-generation mobile experiences for iOS and Android. We build fluid, native-performing cross-platform applications leveraging high-fidelity layouts, offline synchronization, and push messaging systems.",
     videoUrl: "/videos/App.mp4",
     thumbnail: "/images/MobileApp.png", 
     features: ["Cross-Platform", "Native Performance", "App Store Ready", "Push Notifications"]
@@ -92,7 +92,7 @@ export const MAIN_SERVICES = [
   {
     id: "portfolio-websites",
     title: "Portfolio Websites",
-    description: "Premium digital identity experiences. We craft high-impact, narrative-driven portfolios that showcase your expertise with cinematic quality and technical precision.",
+    description: "Premium digital identity experiences. We design high-impact, narrative-driven portfolios showcasing your expertise with cinematic motion, refined typography, and technical precision.",
     videoUrl: "/videos/Portfolio.mp4",
     thumbnail: "/images/Portfolio.png",
     features: ["Professional Design", "Portfolio Gallery", "Contact Forms", "SEO Ready"]

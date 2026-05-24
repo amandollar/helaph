@@ -284,7 +284,7 @@ export default function ContactSection() {
               />
               <FormField
                 number="05"
-                label="What's services are you looking for?"
+                label="What services are you looking for?"
                 placeholder="Choose from a list here"
                 isSelect
                 name="service"
@@ -404,20 +404,20 @@ export default function ContactSection() {
               </h3>
               <div className="flex flex-col">
                 {[
-                  { 
-                    name: "Twitter / X", 
+                  {
+                    name: "Twitter / X",
                     Icon: Twitter,
-                    href: CONTACT.socials.x 
+                    href: CONTACT.socials.x
                   },
-                  { 
-                    name: "Instagram", 
+                  {
+                    name: "Instagram",
                     Icon: Instagram,
-                    href: CONTACT.socials.instagram 
+                    href: CONTACT.socials.instagram
                   },
-                  { 
-                    name: "LinkedIn", 
+                  {
+                    name: "LinkedIn",
                     Icon: Linkedin,
-                    href: CONTACT.socials.linkedin 
+                    href: CONTACT.socials.linkedin
                   },
                 ].map((item, idx) => (
                   <motion.a
@@ -436,12 +436,12 @@ export default function ContactSection() {
                       </h4>
                     </div>
                     <div className="relative w-14 h-14 rounded-full border border-white/10 flex items-center justify-center overflow-hidden transition-all duration-500 group-hover:border-accent">
-                      <motion.div 
+                      <motion.div
                         className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"
                       />
-                      <ArrowRight 
-                        size={24} 
-                        className="relative z-10 text-white group-hover:text-black -rotate-45 group-hover:rotate-0 transition-all duration-500" 
+                      <ArrowRight
+                        size={24}
+                        className="relative z-10 text-white group-hover:text-black -rotate-45 group-hover:rotate-0 transition-all duration-500"
                       />
                     </div>
                   </motion.a>

@@ -65,7 +65,7 @@ html {
 }
 
 body {
-  background-color: #070711;
+  background-color: #080809;
   color: #e2e8f0;
   font-family: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
@@ -832,7 +832,7 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #070711;
+  background: #080809;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color-accent);
@@ -845,7 +845,7 @@ body {
 /* Firefox support */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-accent) #070711;
+  scrollbar-color: var(--color-accent) #080809;
 }
 
 

@@ -26,7 +26,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div style={{ background: "#110704ff", position: "relative" }}>
+    <div style={{ background: "#080809", position: "relative" }}>
       <LottieBackground />
       <div style={{ position: "relative", zIndex: 1 }}>
         <Navbar />

@@ -38,7 +38,7 @@ export default function ProjectModal() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             onClick={closeProject}
-            className="fixed top-8 right-8 z-[110] p-4 bg-surface text-white shadow-2xl hover:scale-110 transition-transform flex items-center justify-center backdrop-blur-md"
+            className="fixed top-8 right-8 z-[110] p-4 bg-surface text-white shadow-2xl hover:scale-110 transition-transform flex items-center justify-center backdrop-blur-md border border-white/10"
             aria-label="Close modal"
           >
             <X className="w-6 h-6" />
@@ -50,7 +50,7 @@ export default function ProjectModal() {
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className={`fixed bottom-0 left-0 right-0 h-[92vh] bg-[#111112] border-none z-[100] overflow-hidden shadow-2xl flex flex-col font-dm-sans ${cormorant.variable}`}
+            className={`fixed bottom-0 left-0 right-0 h-[92vh] bg-[#0c0c0d] border-t border-white/5 z-[100] overflow-hidden shadow-2xl flex flex-col font-dm-sans ${cormorant.variable}`}
           >
             {/* Scrollable Container */}
             <div
@@ -68,10 +68,10 @@ export default function ProjectModal() {
 
                 <div className="flex items-center gap-2 md:gap-4">
                   <a
-                    href={activeProject.LiveLink}
+                    href={activeProject.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-accent text-white rounded-none text-[14px] md:text-[16px] font-bold tracking-wide transition-all group whitespace-nowrap"
+                    className="flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-accent text-white rounded-none text-[14px] md:text-[16px] font-bold tracking-wide hover:bg-[#e85a35] transition-all group whitespace-nowrap"
                   >
                     VISIT LIVE
                   </a>
@@ -83,7 +83,7 @@ export default function ProjectModal() {
                 <div className="max-w-[1000px] mx-auto w-full">
                   <ProjectCarousel
                     key={activeProject.id}
-                    images={activeProject.Graphics}
+                    images={activeProject.graphics}
                   />
                 </div>
 
@@ -97,7 +97,7 @@ export default function ProjectModal() {
                           About project
                         </h3>
                         <p className="text-[24px] md:text-[34px] text-text-secondary leading-[1.3] font-light">
-                          {activeProject["long description"]}
+                          {activeProject.longDescription}
                         </p>
                       </div>
 
@@ -129,7 +129,7 @@ export default function ProjectModal() {
                             Tech Stack
                           </h4>
                           <div className="flex flex-wrap gap-x-6 gap-y-3">
-                            {activeProject["tech stack"].map((tech) => (
+                            {activeProject.techStack.map((tech) => (
                               <span
                                 key={tech}
                                 className="text-[14px] text-text-secondary font-bold cursor-default"
@@ -140,7 +140,7 @@ export default function ProjectModal() {
                           </div>
                         </div>
 
-                        <div className="flex flex-col gap-8 pt-10">
+                        <div className="flex flex-col gap-8 pt-10 border-t border-white/5">
                           <h4 className="text-[14px] font-bold tracking-[0.2em] uppercase text-text-muted">
                             Project Info
                           </h4>
@@ -158,7 +158,15 @@ export default function ProjectModal() {
                                 Industry
                               </span>
                               <span className="text-text-primary text-[15px] font-bold">
-                                Product Design
+                                {activeProject.industry}
+                              </span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span className="text-text-muted text-[15px] font-medium">
+                                Key Outcome
+                              </span>
+                              <span className="text-accent text-[15px] font-bold">
+                                {activeProject.keyResult}
                               </span>
                             </div>
                           </div>

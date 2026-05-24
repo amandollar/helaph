@@ -56,7 +56,7 @@ export default function WhoAreWeSection() {
               <div className="flex items-center gap-3 mb-5">
                 <span className="w-8 h-[1px] bg-[#F07218]" />
                 <span className="text-[#F07218] text-[12px] sm:text-[14px] font-bold tracking-[0.2em] uppercase">
-                  Who Are We?
+                  Who we are
                 </span>
               </div>
 
@@ -67,12 +67,11 @@ export default function WhoAreWeSection() {
                 <span className="italic text-[#F07218]">problem solvers.</span>
               </h2>
 
-              <p className="text-[#110704]/70 text-[15px] sm:text-[16px] lg:text-[17px] font-normal leading-[1.7] max-w-lg">
-                We&apos;re a tight-knit team of builders who care deeply about craft.
-                From pixel-perfect interfaces to robust backend systems, we
-                bring ideas to life with speed, intention, and an obsessive eye
-                for detail — because great digital products deserve nothing
-                less.
+              <p className="text-[#110704]/80 text-[15px] sm:text-[16px] lg:text-[17px] font-normal leading-[1.7] max-w-lg">
+                We are a collective of designers and engineers driven by a singular focus: 
+                crafting high-fidelity digital products. From immersive interfaces to 
+                high-throughput systems, we build with precision, velocity, and an 
+                uncompromising commitment to detail.
               </p>
             </motion.div>
           </div>
