@@ -1,5 +1,212 @@
 [
   {
+    "id": "k24-fitness",
+    "name": "K24 Fitness",
+    "featuredImage": "/images/Projects/K-24Fitness/Gym-graphic-1.webp",
+    "homeImage": "/images/Projects/K-24Fitness/gym-featured.webp",
+    "Graphics": [
+      "/images/Projects/K-24Fitness/Gym-graphic-1.webp",
+      "/images/Projects/K-24Fitness/Gym-graphic-2.webp",
+      "/images/Projects/K-24Fitness/Gym-graphic-3.webp",
+      "/images/Projects/K-24Fitness/Gym-graphic-4.webp",
+      "/images/Projects/K-24Fitness/Gym-graphic-5.webp"
+    ],
+    "type": "Landing",
+    "features": [
+      "CrossFit rig & lifting zones",
+      "Dynamic interactive schedules",
+      "Steam bath recovery pages",
+      "Seamless callback booking flows"
+    ],
+    "tech stack": [
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion",
+      "TypeScript"
+    ],
+    "short description": "Premium landing page for K24 Fitness Studios.",
+    "long description": "A premium, dark-themed landing page engineered for K24 Fitness Studios in Lohegaon, Pune. Features smooth scroll animations, custom SVG equipment graphics, dynamic training program highlights (CrossFit, Zumba, Yoga), and a clean assessment booking interface designed to drive membership conversions.",
+    "LiveLink": "https://k24-fawn.vercel.app/"
+  },
+  {
+    "id": "amber-ent",
+    "name": "Amber ENT",
+    "featuredImage": "/images/Projects/AmberEarAndSpeechCentre/amber-graphic-1.webp",
+    "homeImage": "/images/Projects/AmberEarAndSpeechCentre/Amber-featured.webp",
+    "Graphics": [
+      "/images/Projects/AmberEarAndSpeechCentre/amber-graphic-1.webp",
+      "/images/Projects/AmberEarAndSpeechCentre/amber-graphic-2.webp",
+      "/images/Projects/AmberEarAndSpeechCentre/amber-graphic-3.webp",
+      "/images/Projects/AmberEarAndSpeechCentre/amber-graphic-4.webp",
+      "/images/Projects/AmberEarAndSpeechCentre/amber-graphic-5.webp"
+    ],
+    "type": "Landing",
+    "features": [
+      "Pediatric to senior care catalog",
+      "Interactive audiology & vertigo sections",
+      "Clean clinic booking interface",
+      "Fully responsive clinic showcase"
+    ],
+    "tech stack": [
+      "Next.js",
+      "Tailwind CSS",
+      "Lucide React",
+      "TypeScript"
+    ],
+    "short description": "Modern medical landing page for Amber ENT Centre.",
+    "long description": "A modern, accessible clinic landing page built for Amber ENT, Allergy, Vertigo & Hearing Centre in Telibagh, Lucknow. Features a warm color palette, custom medical SVG illustrations, detailed clinical service breakdowns, patient review carousels, and highly visible call-to-actions for booking appointments.",
+    "LiveLink": "https://amber-ent-speech-and-hearing-centre-ten.vercel.app/"
+  },
+  {
+    "id": "vg-tattoo",
+    "name": "VG Tattoo",
+    "featuredImage": "/images/Projects/TattooWebsite/Tattoo-graphic-1.webp",
+    "homeImage": "/images/Projects/TattooWebsite/Tattoo-featured.webp",
+    "Graphics": [
+      "/images/Projects/TattooWebsite/Tattoo-graphic-1.webp",
+      "/images/Projects/TattooWebsite/Tattoo-graphic-2.webp",
+      "/images/Projects/TattooWebsite/Tattoo-graphic-3.webp",
+      "/images/Projects/TattooWebsite/Tattoo-graphic-4.webp",
+      "/images/Projects/TattooWebsite/Tattoo-graphic-5.webp",
+      "/images/Projects/TattooWebsite/Tattoo-graphic-6.webp"
+    ],
+    "type": "Landing",
+    "features": [
+      "Cinematic dark portfolio layout",
+      "Interactive horizontal scrolling list of styles",
+      "Bespoke consult reservation form",
+      "Dynamic image grid showcases"
+    ],
+    "tech stack": [
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion",
+      "TypeScript"
+    ],
+    "short description": "Cinematic landing page and portfolio for VG Tattoo.",
+    "long description": "An atmospheric, premium digital portfolio and landing page crafted for VG Tattoo studio in Viman Nagar, Pune. Highlights portrait realism and custom designs by master artist Vivek Gangadhare. Featuring text stroke styling, full-screen transparent images, structured lists of tattoo styles, and custom reservation workflows.",
+    "LiveLink": "https://tattoo-story-showcase.vercel.app/"
+  },
+  {
+    "id": "yana-nail-studio",
+    "name": "Yana Nail Studio",
+    "featuredImage": "/images/Projects/YanaNailStudio/YANA-graphic-1.webp",
+    "homeImage": "/images/Projects/YanaNailStudio/YANA-Featured.webp",
+    "Graphics": [
+      "/images/Projects/YanaNailStudio/YANA-graphic-1.webp",
+      "/images/Projects/YanaNailStudio/YANA-graphic-2.webp",
+      "/images/Projects/YanaNailStudio/YANA-graphic-3.webp",
+      "/images/Projects/YanaNailStudio/YANA-graphic-4.webp",
+      "/images/Projects/YanaNailStudio/YANA-graphic-5.webp"
+    ],
+    "type": "portfolio",
+    "features": [
+      "Quiet luxury visual design",
+      "Integrated webm video banner",
+      "Clean pricing & menu cards",
+      "Sanctuary experience highlights"
+    ],
+    "tech stack": [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript"
+    ],
+    "short description": "Minimalist premium portfolio for Yana Nail Studio.",
+    "long description": "A minimalist, quiet luxury portfolio website built for Yana Nail Studio. Features a soft pastel and rich plum aesthetic, high-quality image galleries showing precise nail extensions and manicures, structured service pricing menus, and clean CTA flows for reserving a seat in the studio.",
+    "LiveLink": "https://yana-nail-dream.vercel.app/"
+  },
+  {
+    "id": "the-girlfriend-hour",
+    "name": "The Girlfriend Hour",
+    "featuredImage": "/images/Projects/TheGirlfriendHour/GfHour-graphic-1.webp",
+    "homeImage": "/images/Projects/TheGirlfriendHour/GfHour-Featured.webp",
+    "Graphics": [
+      "/images/Projects/TheGirlfriendHour/GfHour-graphic-1.webp",
+      "/images/Projects/TheGirlfriendHour/GfHour-graphic-2.webp",
+      "/images/Projects/TheGirlfriendHour/GfHour-graphic-3.webp",
+      "/images/Projects/TheGirlfriendHour/GfHour-graphic-4.webp",
+      "/images/Projects/TheGirlfriendHour/GfHour-graphic-5.webp",
+      "/images/Projects/TheGirlfriendHour/GfHour-graphic-6.webp"
+    ],
+    "type": "Landing",
+    "features": [
+      "Warm watercolor visual aesthetic",
+      "Sticky-note and Polaroid grid elements",
+      "Interactive voice-sharing wall",
+      "Custom timeline & FAQ sections"
+    ],
+    "tech stack": [
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion",
+      "TypeScript"
+    ],
+    "short description": "Safe, creative community space for Gen Z.",
+    "long description": "A warm, interactive landing page built for The Girlfriend Hour (TGH) expression lab. Designed to provide a safe, unfiltered creative space for Gen Z storytelling and workshops. Features organic shapes, custom badge and note containers, responsive grids, and interactive user voice walls.",
+    "LiveLink": "https://thegirlfriendhour.netlify.app/"
+  },
+  {
+    "id": "unrot-ai",
+    "name": "Unrot",
+    "featuredImage": "/images/Projects/Unrot/unrot-graphic-1.webp",
+    "homeImage": "/images/Projects/Unrot/unrot-graphic-1.webp",
+    "Graphics": [
+      "/images/Projects/Unrot/unrot-graphic-1.webp",
+      "/images/Projects/Unrot/unrot-graphic-2.webp",
+      "/images/Projects/Unrot/unrot-graphic-3.webp",
+      "/images/Projects/Unrot/unrot-graphic-4.webp",
+      "/images/Projects/Unrot/unrot-graphic-5.webp"
+    ],
+    "type": "Mobile",
+    "features": [
+      "Short 5-10 min daily lessons",
+      "Curated daily AI news feed",
+      "Interview prep flashcards",
+      "Filterable questions by role"
+    ],
+    "tech stack": [
+      "React Native",
+      "Expo",
+      "Android Development",
+      "OpenAI API",
+      "Firebase"
+    ],
+    "short description": "Daily AI learning app for working professionals.",
+    "long description": "Unrot is a daily AI learning app built to help working professionals understand AI through short lessons, curated news, and interview preparation. Finishes in 5-10 minutes a day and covers agentic AI, prompt engineering, LLMs, and real question patterns based on current hiring trends.",
+    "LiveLink": "https://play.google.com/store/apps/details?id=com.buildfastwithai.unrotco"
+  },
+  {
+    "id": "data-usage-monitor",
+    "name": "Data Usage Monitor",
+    "featuredImage": "/images/Projects/dataUsageMonitor/dataUsage-graphic-1.webp",
+    "homeImage": "/images/Projects/dataUsageMonitor/dataUsage-graphic-1.webp",
+    "Graphics": [
+      "/images/Projects/dataUsageMonitor/dataUsage-graphic-1.webp",
+      "/images/Projects/dataUsageMonitor/dataUsage-graphic-2.webp",
+      "/images/Projects/dataUsageMonitor/dataUsage-graphic-3.webp",
+      "/images/Projects/dataUsageMonitor/dataUsage-graphic-4.webp",
+      "/images/Projects/dataUsageMonitor/dataUsage-graphic-5.webp"
+    ],
+    "type": "Mobile",
+    "features": [
+      "Real-time mobile & Wi-Fi tracking",
+      "Per-app usage detailed analysis",
+      "Hotspot & tethering monitoring",
+      "Built-in network speed tester",
+      "Custom home screen widgets"
+    ],
+    "tech stack": [
+      "React Native",
+      "Expo",
+      "Android Development",
+      "Material 3 Design",
+      "Firebase"
+    ],
+    "short description": "Minimalist network speed and data tracker app.",
+    "long description": "Take full control of your mobile plan and internet connection with Data Usage Monitor & Speed Test. Designed with a beautiful, minimalist Material 3 interface, this app is your ultimate, all-in-one network manager. Monitor data alerts, analyze per-app foreground/background consumption, and test connection speeds locally on your device.",
+    "LiveLink": "https://play.google.com/store/apps/details?id=com.rishukumarcodes.DataUsageManager"
+  },
+  {
     "id": "rowh-ecommerce",
     "name": "Rowh",
     "featuredImage": "/images/Projects/Rowh/ROWH_graphic_1.webp",
@@ -62,7 +269,7 @@
   },
   {
     "id": "focusdoc-standby-clock",
-    "name": "FocusDoc",
+    "name": "Focus Dock",
     "featuredImage": "/images/Projects/FocusDock/FocusDock_graphic_1.webp",
     "homeImage": "/images/Projects/FocusDock/FOCUS_DOCK_full.webp",
     "Graphics": [
@@ -75,10 +282,10 @@
     ],
     "type": "Mobile",
     "features": [
+      "5k+ downloads on Play Store",
       "Minimalist design",
       "Optimized for mobile standby",
-      "Visual feedback",
-      "Frictionless interaction"
+      "Visual feedback"
     ],
     "tech stack": [
       "React Native",
@@ -86,8 +293,8 @@
       "Firebase",
       "Mobile App Development"
     ],
-    "short description": "Minimalist productivity tool.",
-    "long description": "A minimalist, high-performance productivity application optimized for mobile standby. Designed to enhance cognitive focus through elegant visual feedback and frictionless user interaction. Available on Google Play Store for all Android devices.",
+    "short description": "Minimalist productivity tool with 5k+ downloads.",
+    "long description": "A minimalist, high-performance productivity application optimized for mobile standby, with over 5k+ downloads on the Google Play Store. Designed to enhance cognitive focus through elegant visual feedback and frictionless user interaction. Available on Google Play Store for all Android devices.",
     "LiveLink": "https://play.google.com/store/apps/details?id=com.rishukumarcodes.Standbyclock"
   },
   {

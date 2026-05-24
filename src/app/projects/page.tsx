@@ -245,7 +245,9 @@ function ProjectCard({
   openProject: (project: Project) => void;
   setIsHoveringCard: (val: boolean) => void;
 }) {
+  const [ratio, setRatio] = useState(1);
   const isMobile = p.type?.toLowerCase() === "mobile";
+  const isMobilePortrait = isMobile && ratio > 1.1;
 
   return (
     <motion.div
@@ -260,10 +262,12 @@ function ProjectCard({
 
       <div
         onClick={() => openProject(p as unknown as Project)}
-        className={`block relative w-full overflow-hidden bg-surface mb-8 cursor-pointer border-white/15 group-hover:border-[#1A1405] transition-all duration-500 shadow-2xl ${
-          isMobile
-            ? "rounded-[32px] sm:rounded-[48px] border-[6px] sm:border-[10px]"
-            : "rounded-[12px] sm:rounded-[20px] border-[4px] sm:border-[8px]"
+        className={`block relative overflow-hidden bg-surface mb-8 cursor-pointer border-white/15 group-hover:border-[#1A1405] transition-all duration-500 shadow-2xl ${
+          isMobilePortrait
+            ? "w-full max-w-[270px] sm:max-w-[300px] mx-auto rounded-[32px] sm:rounded-[48px] border-[6px] sm:border-[10px]"
+            : isMobile
+            ? "w-full max-h-[480px] lg:max-h-[580px] rounded-[32px] sm:rounded-[48px] border-[6px] sm:border-[10px]"
+            : "w-full max-h-[480px] lg:max-h-[580px] rounded-[12px] sm:rounded-[20px] border-[4px] sm:border-[8px]"
         }`}
       >
         <Image
@@ -275,6 +279,10 @@ function ProjectCard({
           style={{ width: "100%", height: "auto" }}
           className="block transition-all duration-500"
           priority={i < 2}
+          onLoad={(e) => {
+            const img = e.currentTarget;
+            setRatio(img.naturalHeight / img.naturalWidth);
+          }}
         />
         <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
       </div>

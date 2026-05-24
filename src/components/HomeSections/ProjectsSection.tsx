@@ -48,7 +48,8 @@ function ScrollingImage({ src, alt }: { src: string; alt: string }) {
         width={1000} // Large enough base width
         height={1000 * (ratio || 1)}
         className="w-full h-auto"
-        onLoadingComplete={(img) => {
+        onLoad={(e) => {
+          const img = e.currentTarget;
           setRatio(img.naturalHeight / img.naturalWidth);
         }}
         priority
@@ -192,7 +193,10 @@ const cardVariants: Variants = {
 
 /* ─── Section ─────────────────────────────────────────────────────────────── */
 export default function ProjectsSection({ skipAnimation = false }: { skipAnimation?: boolean }) {
-  const displayProjects = PROJECTS.slice(0, 4);
+  const featuredIds = ["yana-nail-studio", "rishu-portfolio", "the-girlfriend-hour", "amber-ent"];
+  const displayProjects = featuredIds
+    .map(id => PROJECTS.find(p => p.id === id))
+    .filter((p): p is typeof PROJECTS[number] => !!p);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const containerVariants: Variants = {
