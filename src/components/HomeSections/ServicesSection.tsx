@@ -96,12 +96,31 @@ export default function ServicesSection() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-16 lg:mt-24 flex flex-col items-center justify-center text-center">
+        <div className="mt-16 lg:mt-24 flex flex-row flex-wrap items-center justify-center gap-4 text-center">
           <Link
             href="#contact"
             className="group flex items-center justify-center gap-2 text-[14px] lg:text-[16px] font-semibold tracking-[0.06em] text-white px-8 py-4 rounded-[2px] border border-border-white hover:bg-white hover:text-black transition-all duration-300"
           >
             Discuss your needs
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="transition-transform duration-300 ease-out group-hover:translate-x-1"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Link>
+          <Link
+            href="/pricing"
+            className="group flex items-center justify-center gap-2 text-[14px] lg:text-[16px] font-semibold tracking-[0.06em] text-text-secondary hover:text-white px-8 py-4 rounded-[2px] border border-white/10 hover:border-white/30 hover:bg-white/[0.02] transition-all duration-300"
+          >
+            View pricing
             <svg
               width="18"
               height="18"

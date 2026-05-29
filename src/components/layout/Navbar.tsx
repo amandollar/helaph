@@ -2,17 +2,31 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
+
+const PHONE_NUMBER = "+91 6206103436";
+const PHONE_RAW = "+916206103436";
 
 const navLinks = [
   { href: "/projects", label: "Work" },
-  { href: "/#services", label: "Services" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/about", label: "About" },
 ];
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const pathname = usePathname();
+
+  // Track scroll position
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -26,81 +40,148 @@ export default function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
+  // Copy phone on desktop, dial on mobile
+  const handlePhoneClick = useCallback((e: React.MouseEvent) => {
+    const isMobile =
+      typeof window !== "undefined" &&
+      /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+    if (!isMobile) {
+      e.preventDefault();
+      navigator.clipboard.writeText(PHONE_NUMBER).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      });
+    }
+    // On mobile, let the href="tel:..." handle it
+  }, []);
+
   return (
     <>
-      {/* PERSISTENT CTA - Fixed at Top Right */}
-      <motion.div
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed bottom-0 md:bottom-auto md:top-0 right-0 z-[60] p-6 sm:p-8 lg:px-16 lg:py-8 pointer-events-none"
-      >
-        <Link
-          href="/#contact"
-          className="inline-flex items-center gap-2.5 bg-accent text-white text-[14px] lg:text-[16px] font-semibold tracking-[0.06em] px-8 py-4 rounded-[2px] border border-accent hover:bg-[#e85a35] hover:border-[#e85a35] pointer-events-auto transition-colors duration-200 group"
-        >
-          <span>Start your project</span>
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="transition-transform duration-200 group-hover:translate-x-[2px]"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </Link>
-      </motion.div>
-
-      {/* MAIN NAV - Scrolling with header */}
+      {/* MAIN NAV - Fixed */}
       <motion.nav
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-        className="absolute top-0 left-0 w-full z-50 py-8 px-6 sm:px-8 lg:px-16"
+        className={`fixed top-0 left-0 w-full z-50 px-6 sm:px-8 lg:px-12 transition-all duration-300 ${
+          isScrolled
+            ? "bg-[#080809]/85 backdrop-blur-md py-3"
+            : "py-5"
+        }`}
       >
-        <div className="w-full grid grid-cols-3 items-center">
-          {/* Logo - LEFT */}
-          <div className="flex justify-start">
-            <Link href="/" className="flex items-center gap-1.5 group">
-              <Image 
-                src="/images/icons/helpah_dark.webp" 
-                alt="helaph Logo" 
-                width={34}
-                height={34}
+        <div className="w-full flex items-center justify-between gap-4">
+          {/* Logo + Nav Links - LEFT */}
+          <div className="flex items-center gap-8">
+            <Link href="/" className="flex items-center gap-1.5 group shrink-0">
+              <Image
+                src="/images/icons/helpah_dark.webp"
+                alt="helaph Logo"
+                width={28}
+                height={28}
                 className="object-contain group-hover:scale-105 transition-transform duration-300"
               />
               <span className="text-white font-black text-[20px] tracking-tight uppercase">
                 helaph
               </span>
             </Link>
-          </div>
 
-          {/* Nav Links - CENTER */}
-          <div className="flex justify-center flex-1">
-            <ul className="hidden md:flex items-center gap-10">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-[12px] font-medium tracking-[0.2em] uppercase text-text-secondary hover:text-text-primary transition-colors duration-300"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+            <ul className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => {
+                const isActive = pathname !== "/" && pathname === link.href;
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className={`text-[13px] font-medium tracking-[0.2em] uppercase transition-colors duration-300 relative py-1.5 group ${
+                        isActive
+                          ? "text-text-primary"
+                          : "text-text-secondary hover:text-text-primary"
+                      }`}
+                    >
+                      {link.label}
+                      <span
+                        className={`absolute bottom-0 left-0 w-full h-[2px] transition-transform duration-300 origin-left ${
+                          isActive
+                            ? "bg-accent scale-x-100"
+                            : "bg-white scale-x-0 group-hover:scale-x-100"
+                        }`}
+                      />
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
-          {/* Right Side - Hamburger (Mobile) */}
-          <div className="flex justify-end md:pr-0">
+          {/* Right Side - CTAs + Hamburger */}
+          <div className="flex items-center gap-2 shrink-0">
+            {/* Phone button - desktop only */}
+            <a
+              href={`tel:${PHONE_RAW}`}
+              onClick={handlePhoneClick}
+              title={copied ? "Copied!" : "Call us"}
+              className="hidden md:inline-flex items-center gap-2 border border-white/10 text-white/70 hover:text-white hover:border-white/30 text-[14px] font-medium tracking-wide px-4 py-2 rounded-[2px] transition-all duration-200 group relative"
+            >
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="shrink-0"
+              >
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 5.98 5.98l.96-.94a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <AnimatePresence mode="wait">
+                {copied ? (
+                  <motion.span
+                    key="copied"
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -4 }}
+                    transition={{ duration: 0.15 }}
+                    className="text-green-400"
+                  >
+                    Copied!
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="number"
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -4 }}
+                    transition={{ duration: 0.15 }}
+                  >
+                    {PHONE_NUMBER}
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </a>
+
+            {/* Start your project CTA */}
+            <Link
+              href="/#contact"
+              className="hidden md:inline-flex items-center gap-2 bg-accent text-white text-[14px] font-semibold tracking-[0.06em] px-5 py-2 rounded-[2px] border border-accent hover:bg-[#e85a35] hover:border-[#e85a35] transition-colors duration-200 group"
+            >
+              <span>Start your project</span>
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="transition-transform duration-200 group-hover:translate-x-[2px]"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
+
+            {/* Hamburger - Mobile */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center group pointer-events-auto"
+              className="md:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center"
               aria-label="Toggle menu"
             >
               <span
@@ -127,17 +208,17 @@ export default function Navbar() {
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed inset-0 z-[70] bg-[#080809] flex flex-col"
           >
-            <div className="p-8 flex justify-between items-center">
+            <div className="p-6 flex justify-between items-center">
               <Link
                 href="/"
                 className="flex items-center gap-1.5"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Image 
-                  src="/images/icons/helpah_dark.webp" 
-                  alt="helaph Logo" 
-                  width={34}
-                  height={34}
+                <Image
+                  src="/images/icons/helpah_dark.webp"
+                  alt="helaph Logo"
+                  width={28}
+                  height={28}
                   className="object-contain"
                 />
                 <span className="text-white font-black text-lg uppercase">
@@ -146,10 +227,10 @@ export default function Navbar() {
               </Link>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50"
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50"
               >
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -183,16 +264,37 @@ export default function Navbar() {
               ))}
             </nav>
 
-            <div className="p-8">
-              <Link
-                href="#contact"
+            <div className="p-6 flex flex-col gap-3">
+              {/* Call us - mobile */}
+              <a
+                href={`tel:${PHONE_RAW}`}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="inline-flex items-center justify-center gap-2.5 bg-accent text-white text-[16px] font-semibold tracking-[0.06em] w-full py-5 rounded-[2px] border border-accent hover:bg-[#e85a35] hover:border-[#e85a35] transition-colors duration-200 group"
+                className="inline-flex items-center justify-center gap-2.5 border border-white/10 text-white/70 text-[15px] font-medium tracking-wide w-full py-4 rounded-[2px] hover:border-white/30 hover:text-white transition-colors duration-200"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 5.98 5.98l.96-.94a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>Call us · {PHONE_NUMBER}</span>
+              </a>
+
+              <Link
+                href="/#contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="inline-flex items-center justify-center gap-2.5 bg-accent text-white text-[15px] font-semibold tracking-[0.06em] w-full py-4 rounded-[2px] border border-accent hover:bg-[#e85a35] hover:border-[#e85a35] transition-colors duration-200 group"
               >
                 <span>Start your project</span>
                 <svg
-                  width="18"
-                  height="18"
+                  width="16"
+                  height="16"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"

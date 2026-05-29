@@ -204,7 +204,7 @@ export default function ProjectsSection({ skipAnimation = false }: { skipAnimati
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: skipAnimation ? 0.4 : 3.5,
+        delayChildren: skipAnimation ? 0.1 : 3.5,
         staggerChildren: 0.1,
       },
     },

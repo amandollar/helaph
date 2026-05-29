@@ -3,7 +3,6 @@
 //comment
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import {
   motion,
@@ -14,7 +13,7 @@ import {
 import { PROJECTS } from "../../constants";
 import ContactSection from "../../components/HomeSections/ContactSection";
 import LottieBackground from "../../components/ui/LottieBackground";
-import { ChevronLeft } from "lucide-react";
+import Navbar from "../../components/layout/Navbar";
 import { useProjectModal } from "../../contexts/ProjectModalContext";
 import { Project } from "../../types";
 
@@ -58,11 +57,12 @@ export default function ProjectsPage() {
   const { openProject } = useProjectModal();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    return () => {
-      sessionStorage.setItem("fromProjects", "true");
-    };
-  }, []);
+     window.scrollTo(0, 0);
+     return () => {
+       sessionStorage.setItem("fromProjects", "true");
+       sessionStorage.setItem("skipHomeAnimation", "true");
+     };
+   }, []);
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -120,20 +120,9 @@ export default function ProjectsPage() {
         Case study
       </motion.div>
 
-      <div style={{ position: "relative", zIndex: 10 }}>
-        {/* Navigation Bar / Back Button */}
-        <nav className="fixed top-0 left-0 w-full z-50 px-6 sm:px-8 lg:px-16 py-8 flex justify-between items-center pointer-events-none">
-          <Link
-            href="/"
-            className="group flex items-center gap-2 px-4 py-2.5 bg-black text-white hover:bg-neutral-900 transition-all duration-300 pointer-events-auto"
-          >
-            <ChevronLeft className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
-            <span className="text-[13px] font-medium tracking-[0.08em] uppercase text-white/70 group-hover:text-white transition-colors">
-              Back
-            </span>
-          </Link>
-        </nav>
+      <Navbar />
 
+      <div style={{ position: "relative", zIndex: 10 }}>
         <main className="pt-48 lg:pt-64 pb-32">
           {/* Header Section */}
           <div className="w-full px-6 sm:px-8 lg:px-16 mb-24 lg:mb-40 flex justify-center">

@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import { motion, useInView } from "framer-motion";
 
@@ -53,15 +54,8 @@ export default function WhoAreWeSection() {
                 ease: [0.16, 1, 0.3, 1],
               }}
             >
-              <div className="flex items-center gap-3 mb-5">
-                <span className="w-8 h-[1px] bg-[#F07218]" />
-                <span className="text-[#F07218] text-[12px] sm:text-[14px] font-bold tracking-[0.2em] uppercase">
-                  Who Are We?
-                </span>
-              </div>
-
               <h2
-                className={`${cormorant.className} text-[36px] sm:text-[48px] lg:text-[56px] leading-[1.1] font-medium text-[#110704] mb-5`}
+                className={`${cormorant.className} text-[36px] sm:text-[48px] lg:text-[56px] leading-[1.1] font-medium text-[#110704] mb-6`}
               >
                 Designers, engineers, <br className="hidden sm:block" />
                 <span className="italic text-[#F07218]">problem solvers.</span>
@@ -71,9 +65,31 @@ export default function WhoAreWeSection() {
                 We&apos;re a tight-knit team of builders who care deeply about craft.
                 From pixel-perfect interfaces to robust backend systems, we
                 bring ideas to life with speed, intention, and an obsessive eye
-                for detail — because great digital products deserve nothing
+                for detail because great digital products deserve nothing
                 less.
               </p>
+
+              <div className="mt-8">
+                <Link
+                  href="/about"
+                  className="group inline-flex items-center justify-center gap-2 text-[14px] lg:text-[15px] font-semibold tracking-[0.06em] bg-[#110704] text-white px-7 py-3.5 rounded-[2px] hover:bg-[#F07218] transition-all duration-300"
+                >
+                  About us
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition-transform duration-300 ease-out group-hover:translate-x-1"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
             </motion.div>
           </div>
 

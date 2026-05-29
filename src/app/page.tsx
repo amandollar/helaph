@@ -14,12 +14,14 @@ export default function Home() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const fromProjects = sessionStorage.getItem("fromProjects") === "true";
-      if (fromProjects) {
+      const skipHome = sessionStorage.getItem("skipHomeAnimation") === "true";
+      if (fromProjects || skipHome) {
         setIsReturningFromProjects(true);
         // We'll let the children components handle clearing the flag if needed, 
         // or clear it here after a short delay to ensure all children saw it.
         setTimeout(() => {
           sessionStorage.removeItem("fromProjects");
+          sessionStorage.removeItem("skipHomeAnimation");
         }, 1000);
       }
     }
